@@ -34,7 +34,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Solution URL here](https://your-solution-url.com)
+- Solution URL: [Solution URL here](https://paikai-lee.github.io/frontend-mentor-solutions/05-product-preview-card-component-main/)
 
 ## My process
 
