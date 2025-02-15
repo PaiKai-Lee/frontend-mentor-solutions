@@ -1,213 +1,212 @@
 :root {
-    /* colors */
-    --red: hsl(0, 78%, 62%);
-    --cyan: hsl(180, 62%, 55%);
-    --orange: hsl(34, 97%, 64%);
-    --blue: hsl(212, 86%, 64%);
-    --very-dark-blue: hsl(234, 12%, 34%);
-    --grayish-blue: hsl(229, 6%, 66%);
-    --very-light-gray: hsl(0, 0%, 98%);
+  /* colors */
+  --red: hsl(0, 78%, 62%);
+  --cyan: hsl(180, 62%, 55%);
+  --orange: hsl(34, 97%, 64%);
+  --blue: hsl(212, 86%, 64%);
+  --very-dark-blue: hsl(234, 12%, 34%);
+  --grayish-blue: hsl(229, 6%, 66%);
+  --very-light-gray: hsl(0, 0%, 98%);
 
-    /* space */
-    --space-650: 52px;
-    --space-600: 48px;
-    --space-550: 44px;
-    --space-500: 40px;
-    --space-450: 36px;
-    --space-400: 32px;
-    --space-350: 28px;
-    --space-300: 24px;
-    --space-250: 20px;
-    --space-200: 16px;
-    --space-150: 12px;
-    --space-100: 8px;
-    --space-50: 4px;
+  /* space */
+  --space-650: 52px;
+  --space-600: 48px;
+  --space-550: 44px;
+  --space-500: 40px;
+  --space-450: 36px;
+  --space-400: 32px;
+  --space-350: 28px;
+  --space-300: 24px;
+  --space-250: 20px;
+  --space-200: 16px;
+  --space-150: 12px;
+  --space-100: 8px;
+  --space-50: 4px;
 
-    /* font-wight 200, 400, 600 */
+  /* font-wight 200, 400, 600 */
 }
 
 /* reset */
 *,
 *::before,
 *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 ol,
 ul {
-    list-style: none;
+  list-style: none;
 }
 
 a {
-    text-decoration: inherit;
-    color: inherit;
+  text-decoration: inherit;
+  color: inherit;
 }
 
 body {
-    height: 100vh;
-    font-size: 15px;
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--light-gray);
-    display: flex;
-    flex-direction: column;
+  height: 100vh;
+  font-size: 15px;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--light-gray);
+  display: flex;
+  flex-direction: column;
 }
 
 header {
-    flex: 0 1 auto;
+  flex: 0 1 auto;
 }
 
 main {
-    flex: 1 1 auto;
+  flex: 1 1 auto;
 }
 
-
 .container {
-    margin-left: auto;
-    margin-right: auto;
-    width: 1440px;
-    max-width: 100%;
-    overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1440px;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .header__content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 300px;
-    gap: var(--space-200);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  gap: var(--space-200);
 }
 
 .header__content .header__title {
-    font-size: 1.05rem;
-    font-weight: 200;
-    color: var(--very-dark-blue);
-    text-align: center;
+  font-size: 1.05rem;
+  font-weight: 200;
+  color: var(--very-dark-blue);
+  text-align: center;
 }
 
 .header__content .header__title-sub {
-    font-size: 2.15rem;
+  font-size: 2.15rem;
 }
 
 .header__content .header__desc {
-    font-weight: 200;
-    color: var(--grayish-blue);
-    text-align: center;
-    max-width: 500px
+  font-weight: 200;
+  color: var(--grayish-blue);
+  text-align: center;
+  max-width: 500px;
 }
 
 .grid-container {
-    height: 600px;
-    width: 85%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 40px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    gap: var(--space-400);
-    padding: var(--space-200);
+  height: 600px;
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: var(--space-400);
+  padding: var(--space-200);
 }
 
 .card {
-    display: flex;
-    flex-direction: column;
-    padding: var(--space-350);
-    box-shadow: lightgray 0 10px 20px;
-    border-radius: 0.5rem;
-    gap: var(--space-200);
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-350);
+  box-shadow: lightgray 0 10px 20px;
+  border-radius: 0.5rem;
+  gap: var(--space-200);
 }
 
 .card .card__title {
-    flex-grow: 1;
-    font-size: 1.5rem;
-    color: var(--very-dark-blue);
+  flex-grow: 1;
+  font-size: 1.5rem;
+  color: var(--very-dark-blue);
 }
 
 .card .card__content {
-    flex-grow: 1;
-    color: var(--grayish-blue);
+  flex-grow: 1;
+  color: var(--grayish-blue);
 }
 
 .card .card__img {
-    flex-grow: 2;
-    align-self: flex-end;
-    width: 75px;
-    height: 75px;
-    object-fit: contain;
+  flex-grow: 2;
+  align-self: flex-end;
+  width: 75px;
+  height: 75px;
+  object-fit: contain;
 }
 
 .supervisor {
-    grid-row: 2 / 4;
-    grid-column: 1 / 2;
-    border-top: var(--cyan) 0.25rem solid;
+  grid-row: 2 / 4;
+  grid-column: 1 / 2;
+  border-top: var(--cyan) 0.25rem solid;
 }
 
 .team-builder {
-    grid-row: 1 / 3;
-    grid-column: 2 / 3;
-    border-top: var(--red) 0.25rem solid;
+  grid-row: 1 / 3;
+  grid-column: 2 / 3;
+  border-top: var(--red) 0.25rem solid;
 }
 
 .karma {
-    grid-row: 3 / -1;
-    grid-column: 2 / 3;
-    border-top: var(--orange) 0.25rem solid;
+  grid-row: 3 / -1;
+  grid-column: 2 / 3;
+  border-top: var(--orange) 0.25rem solid;
 }
 
 .calculator {
-    grid-row: 2 / 4;
-    grid-column: 3 / -1;
-    border-top: var(--blue) 0.25rem solid;
+  grid-row: 2 / 4;
+  grid-column: 3 / -1;
+  border-top: var(--blue) 0.25rem solid;
 }
 
-@media screen and (max-width:600px) {
-    .container {
-        padding: 20px;
-    }
+@media screen and (max-width: 600px) {
+  .container {
+    padding: 20px;
+  }
 
-    .header__content .header__title {
-        font-size: 0.8rem;
-    }
+  .header__content .header__title {
+    font-size: 0.8rem;
+  }
 
-    .header__content .header__title-sub {
-        font-size: 1.7rem;
-    }
+  .header__content .header__title-sub {
+    font-size: 1.7rem;
+  }
 
-    .header__content .header__desc {
-        font-size: 1.05rem;
-    }
+  .header__content .header__desc {
+    font-size: 1.05rem;
+  }
 
-    .grid-container {
-        grid-template-columns: 1fr;
-        height: auto;
-        width: 100%;
-        padding: 0;
-    }
+  .grid-container {
+    grid-template-columns: 1fr;
+    height: auto;
+    width: 100%;
+    padding: 0;
+  }
 
-    .card {
-        padding: var(--space-250);
-    }
+  .card {
+    padding: var(--space-250);
+  }
 
-    .supervisor {
-        grid-row: auto;
-        grid-column: auto;
-    }
+  .supervisor {
+    grid-row: auto;
+    grid-column: auto;
+  }
 
-    .team-builder {
-        grid-row: auto;
-        grid-column: auto;
-    }
+  .team-builder {
+    grid-row: auto;
+    grid-column: auto;
+  }
 
-    .karma {
-        grid-row: auto;
-        grid-column: auto;
-    }
+  .karma {
+    grid-row: auto;
+    grid-column: auto;
+  }
 
-    .calculator {
-        grid-row: auto;
-        grid-column: auto;
-    }
+  .calculator {
+    grid-row: auto;
+    grid-column: auto;
+  }
 }
