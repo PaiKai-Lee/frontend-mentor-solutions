@@ -39,7 +39,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [solution URL here](https://paikai-lee.github.io/frontend-mentor-solutions/08-article-preview-component-master/)
+- Solution URL: [solution URL here](https://paikai-lee.github.io/frontend-mentor-solutions/09-newsletter-sign-up-with-success-message-main/)
 
 ## My process
 
