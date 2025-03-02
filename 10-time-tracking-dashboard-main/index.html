@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./output.css" />
+    <title>Frontend Mentor | Time tracking dashboard</title>
+  </head>
+  <body class="font-rubik text-lg text-white">
+    <main class="bg-very-dark-blue flex min-h-screen items-center">
+      <div
+        class="container m-auto grid gap-6 p-5 md:grid-cols-4 md:grid-rows-2"
+      >
+        <!-- header -->
+        <div class="bg-dark-blue overflow-hidden rounded-2xl">
+          <div class="bg-primary-blue flex items-center gap-5 rounded-2xl p-8">
+            <img
+              class="size-16 rounded-full ring-[3px] ring-white"
+              src="./images/image-jeremy.png"
+              alt="avatar"
+            />
+            <div>
+              <p class="text-sm text-gray-300">Report For</p>
+              <h1 class="text-2xl font-light">Jeremy Robson</h1>
+            </div>
+          </div>
+          <div class="flex justify-between px-8 py-6 *:cursor-pointer">
+            <button class="text-desaturated-blue hover:text-white">
+              Daily
+            </button>
+            <button class="hover:text-white" data-check="true">Weekly</button>
+            <button class="text-desaturated-blue hover:text-white">
+              Monthly
+            </button>
+          </div>
+        </div>
+        <!-- card -->
+        <div
+          class="bg-work-red relative flex h-[170px] flex-col overflow-hidden rounded-2xl"
+        >
+          <img
+            class="-translate-x-1/8 -translate-y-1/8 absolute right-0 top-0"
+            src="./images/icon-work.svg"
+            alt="work icon"
+          />
+          <div
+            class="bg-dark-blue hover:bg-desaturated-blue z-10 mt-auto cursor-pointer rounded-2xl px-5 py-8"
+          >
+            <div class="flex items-center justify-between">
+              <p class="text-lg">Work</p>
+              <img
+                class="hover:opacity-50"
+                src="./images/icon-ellipsis.svg"
+                alt="ellipsis"
+              />
+            </div>
+            <div class="mt-1 flex items-center justify-between">
+              <p class="text-3xl">32hrs</p>
+              <p class="text-sm text-gray-300">Last Week - 36hrs</p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="bg-work-red relative flex h-[170px] flex-col overflow-hidden rounded-2xl"
+        >
+          <img
+            class="-translate-x-1/8 -translate-y-1/8 absolute right-0 top-0"
+            src="./images/icon-work.svg"
+            alt="work icon"
+          />
+          <div
+            class="bg-dark-blue hover:bg-desaturated-blue z-10 mt-auto cursor-pointer rounded-2xl px-5 py-8"
+          >
+            <div class="flex items-center justify-between">
+              <p class="text-lg">Work</p>
+              <img
+                class="hover:opacity-50"
+                src="./images/icon-ellipsis.svg"
+                alt="ellipsis"
+              />
+            </div>
+            <div class="mt-1 flex items-center justify-between">
+              <p class="text-3xl">32hrs</p>
+              <p class="text-sm text-gray-300">Last Week - 36hrs</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
