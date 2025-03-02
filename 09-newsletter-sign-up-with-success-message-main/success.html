@@ -1,47 +1,55 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- displays site properly based on user's device -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <title>
+      Frontend Mentor | Newsletter sign-up form with success message
+    </title>
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
-  <title>
-    Frontend Mentor | Newsletter sign-up form with success message
-  </title>
+    <link rel="stylesheet" href="./output.css" />
+  </head>
 
-  <link rel="stylesheet" href="./output.css" />
-</head>
-
-<body class="font-roboto bg-[var(--neutral-blue-700)]">
-  <main class="flex w-full justify-center md:h-screen  md:items-center">
-    <div class="container flex h-screen w-full flex-col bg-white p-8 md:h-auto md:max-w-[460px] md:p-12 md:rounded-4xl">
-      <div class="flex grow flex-col items-start justify-center">
-        <img src="./assets/images/icon-success.svg" alt="icon success" />
-        <h1 class="mt-10 text-4xl font-extrabold md:text-5xl">Thanks for subscribing!</h1>
-        <p class="mt-6">
-          A confirmation email has been sent to <strong id="email"></strong>.
-          Please open it and click the button inside to confirm your
-          subscription. Dismiss message
-        </p>
+  <body class="font-roboto bg-[var(--neutral-blue-700)]">
+    <main class="flex w-full justify-center md:h-screen md:items-center">
+      <div
+        class="md:rounded-4xl container flex h-screen w-full flex-col bg-white p-8 md:h-auto md:max-w-[460px] md:p-12"
+      >
+        <div class="flex grow flex-col items-start justify-center">
+          <img src="./assets/images/icon-success.svg" alt="icon success" />
+          <h1 class="mt-10 text-4xl font-extrabold md:text-5xl">
+            Thanks for subscribing!
+          </h1>
+          <p class="mt-6">
+            A confirmation email has been sent to <strong id="email"></strong>.
+            Please open it and click the button inside to confirm your
+            subscription. Dismiss message
+          </p>
+        </div>
+        <a href="./">
+          <button
+            class="hover:bg-linear-to-r w-full cursor-pointer rounded-lg bg-[var(--neutral-blue-800)] py-4 font-bold text-white transition-colors duration-300 hover:from-[var(--primary-red-secondary)] hover:to-[var(--primary-red)] md:mt-10"
+            type="button"
+          >
+            Dismiss message
+          </button>
+        </a>
       </div>
-      <a href="./">
-        <button
-          class="hover:bg-linear-to-r w-full cursor-pointer rounded-lg bg-[var(--neutral-blue-800)] py-4 font-bold text-white transition-colors duration-300 hover:from-[var(--primary-red-secondary)] hover:to-[var(--primary-red)] md:mt-10"
-          type="button">
-          Dismiss message
-        </button>
-      </a>
-    </div>
-  </main>
+    </main>
 
-  <script>
-    const params = new URLSearchParams(window.location.search);
-    const emailEl = document.querySelector("#email");
-    const email = params.get("email") || "ash@loremcompany.com";
-    emailEl.textContent = email;
-  </script>
-</body>
-
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const emailEl = document.querySelector("#email");
+      const email = params.get("email") || "ash@loremcompany.com";
+      emailEl.textContent = email;
+    </script>
+  </body>
 </html>

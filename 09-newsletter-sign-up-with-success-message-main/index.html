@@ -18,32 +18,41 @@
     <link rel="stylesheet" href="./output.css" />
   </head>
 
-  <body class="bg-[var(--neutral-blue-700)] font-roboto">
+  <body class="font-roboto bg-[var(--neutral-blue-700)]">
     <main class="flex w-full justify-center md:h-screen md:items-center">
-      <div class="container flex min-h-screen flex-col bg-white md:flex-row-reverse md:p-6 md:rounded-3xl md:min-h-auto md:max-w-[960px]">
+      <div
+        class="md:min-h-auto container flex min-h-screen flex-col bg-white md:max-w-[960px] md:flex-row-reverse md:rounded-3xl md:p-6"
+      >
         <picture class="md:w-1/2">
-          <source media="(min-width: 768px)" srcset="./assets/images/illustration-sign-up-desktop.svg">
-          <img class="w-full" src="./assets/images/illustration-sign-up-mobile.svg" alt="illustration-sign-up" />
+          <source
+            media="(min-width: 768px)"
+            srcset="./assets/images/illustration-sign-up-desktop.svg"
+          />
+          <img
+            class="w-full"
+            src="./assets/images/illustration-sign-up-mobile.svg"
+            alt="illustration-sign-up"
+          />
         </picture>
-        <div class="flex flex-col gap-5 p-6 md:p-12 md:justify-center">
+        <div class="flex flex-col gap-5 p-6 md:justify-center md:p-12">
           <h1 class="text-4xl font-extrabold md:text-6xl">Stay updated!</h1>
           <p>Join 60,000+ product managers receiving monthly updates on:</p>
           <ul class="flex flex-col gap-2 pl-8">
             <li class="relative">
               <span class="absolute -left-[2rem]">
-                <img src="./assets/images/icon-list.svg" alt="icon-list"/>
+                <img src="./assets/images/icon-list.svg" alt="icon-list" />
               </span>
               <span>Product discovery and building what matters</span>
             </li>
             <li class="relative">
               <span class="absolute -left-[2rem]">
-                <img src="./assets/images/icon-list.svg" alt="icon-list"/>
+                <img src="./assets/images/icon-list.svg" alt="icon-list" />
               </span>
               <span>Measuring to ensure updates are a success</span>
             </li>
             <li class="relative">
               <span class="absolute -left-[2rem]">
-                <img src="./assets/images/icon-list.svg" alt="icon-list"/>
+                <img src="./assets/images/icon-list.svg" alt="icon-list" />
               </span>
               <span>And much more!</span>
             </li>
