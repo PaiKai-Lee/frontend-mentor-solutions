@@ -99,6 +99,21 @@
           monthly: "Last Month",
         };
 
+        function preloadImages() {
+          Object.values(bgMap).forEach((item) => {
+            const img = new Image();
+            img.classList.add(
+              "-translate-x-1/8",
+              "-translate-y-1/8",
+              "absolute",
+              "right-0",
+              "top-0",
+            );
+            img.src = item.icon;
+            item.image = img;
+          });
+        }
+
         async function fetchData() {
           try {
             const data = await fetch("./data.json");
@@ -145,15 +160,8 @@
           );
           card.setAttribute("data-component", "card");
 
-          const bgImg = document.createElement("img");
-          bgImg.classList.add(
-            "-translate-x-1/8",
-            "-translate-y-1/8",
-            "absolute",
-            "right-0",
-            "top-0",
-          );
-          bgImg.src = bg.icon;
+          // const bgImg = document.createElement("img");
+          const bgImg = bg.image;
           bgImg.alt = `${data.title} icon`;
 
           const content = document.createElement("div");
@@ -230,6 +238,7 @@
         }
 
         // init
+        preloadImages();
         const [jsonData, error] = await fetchData();
         const dashboard = document.querySelector("#dashboard");
 
