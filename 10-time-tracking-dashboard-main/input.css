@@ -17,3 +17,11 @@
   --color-desaturated-blue: hsl(235, 45%, 61%);
   --color-pale-blue: hsl(236, 100%, 87%);
 }
+
+@layer components {
+  .card {
+    position: relative;
+    border-radius: var(--radius-2xl);
+    overflow: hidden;
+  }
+}

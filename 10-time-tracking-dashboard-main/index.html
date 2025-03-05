@@ -14,86 +14,258 @@
     <link rel="stylesheet" href="./output.css" />
     <title>Frontend Mentor | Time tracking dashboard</title>
   </head>
+
   <body class="font-rubik text-lg text-white">
     <main class="bg-very-dark-blue flex min-h-screen items-center">
       <div
-        class="container m-auto grid gap-6 p-5 md:grid-cols-4 md:grid-rows-2"
+        id="dashboard"
+        class="container m-auto grid gap-6 p-5 md:max-w-[1180px] md:grid-cols-4 md:grid-rows-2"
       >
         <!-- header -->
-        <div class="bg-dark-blue overflow-hidden rounded-2xl">
-          <div class="bg-primary-blue flex items-center gap-5 rounded-2xl p-8">
+        <div data-component="header" class="card bg-dark-blue md:row-span-full">
+          <div
+            class="bg-primary-blue card flex items-center gap-5 p-8 md:flex-col md:items-start md:gap-10 md:pb-20"
+          >
             <img
-              class="size-16 rounded-full ring-[3px] ring-white"
+              class="size-16 rounded-full ring-[3px] ring-white md:size-20"
               src="./images/image-jeremy.png"
               alt="avatar"
             />
             <div>
               <p class="text-sm text-gray-300">Report For</p>
-              <h1 class="text-2xl font-light">Jeremy Robson</h1>
+              <h1 class="md:leading-12 text-2xl font-light md:text-4xl">
+                Jeremy Robson
+              </h1>
             </div>
           </div>
-          <div class="flex justify-between px-8 py-6 *:cursor-pointer">
-            <button class="text-desaturated-blue hover:text-white">
+          <div
+            class="flex justify-between px-8 py-6 *:cursor-pointer *:transition-colors *:duration-150 *:aria-selected:text-white md:flex-col md:items-start md:gap-4"
+          >
+            <button
+              data-time="daily"
+              class="text-desaturated-blue hover:text-white"
+            >
               Daily
             </button>
-            <button class="hover:text-white" data-check="true">Weekly</button>
-            <button class="text-desaturated-blue hover:text-white">
+            <button
+              data-time="weekly"
+              class="text-desaturated-blue hover:text-white"
+            >
+              Weekly
+            </button>
+            <button
+              data-time="monthly"
+              class="text-desaturated-blue hover:text-white"
+            >
               Monthly
             </button>
           </div>
         </div>
-        <!-- card -->
-        <div
-          class="bg-work-red relative flex h-[170px] flex-col overflow-hidden rounded-2xl"
-        >
-          <img
-            class="-translate-x-1/8 -translate-y-1/8 absolute right-0 top-0"
-            src="./images/icon-work.svg"
-            alt="work icon"
-          />
-          <div
-            class="bg-dark-blue hover:bg-desaturated-blue z-10 mt-auto cursor-pointer rounded-2xl px-5 py-8"
-          >
-            <div class="flex items-center justify-between">
-              <p class="text-lg">Work</p>
-              <img
-                class="hover:opacity-50"
-                src="./images/icon-ellipsis.svg"
-                alt="ellipsis"
-              />
-            </div>
-            <div class="mt-1 flex items-center justify-between">
-              <p class="text-3xl">32hrs</p>
-              <p class="text-sm text-gray-300">Last Week - 36hrs</p>
-            </div>
-          </div>
-        </div>
-        <div
-          class="bg-work-red relative flex h-[170px] flex-col overflow-hidden rounded-2xl"
-        >
-          <img
-            class="-translate-x-1/8 -translate-y-1/8 absolute right-0 top-0"
-            src="./images/icon-work.svg"
-            alt="work icon"
-          />
-          <div
-            class="bg-dark-blue hover:bg-desaturated-blue z-10 mt-auto cursor-pointer rounded-2xl px-5 py-8"
-          >
-            <div class="flex items-center justify-between">
-              <p class="text-lg">Work</p>
-              <img
-                class="hover:opacity-50"
-                src="./images/icon-ellipsis.svg"
-                alt="ellipsis"
-              />
-            </div>
-            <div class="mt-1 flex items-center justify-between">
-              <p class="text-3xl">32hrs</p>
-              <p class="text-sm text-gray-300">Last Week - 36hrs</p>
-            </div>
-          </div>
-        </div>
+        <!-- cards list -->
       </div>
     </main>
+    <script>
+      (async function () {
+        const bgMap = {
+          Work: {
+            color: "bg-work-red",
+            icon: "./images/icon-work.svg",
+          },
+          Play: {
+            color: "bg-play-blue",
+            icon: "./images/icon-play.svg",
+          },
+          Study: {
+            color: "bg-study-red",
+            icon: "./images/icon-study.svg",
+          },
+          Exercise: {
+            color: "bg-exercise-green",
+            icon: "./images/icon-exercise.svg",
+          },
+          Social: {
+            color: "bg-social-violet",
+            icon: "./images/icon-social.svg",
+          },
+          SelfCare: {
+            color: "bg-self-care-orange",
+            icon: "./images/icon-self-care.svg",
+          },
+        };
+
+        const timeMap = {
+          daily: "Yesterday",
+          weekly: "Last Week",
+          monthly: "Last Month",
+        };
+
+        async function fetchData() {
+          try {
+            const data = await fetch("./data.json");
+            const json = await data.json();
+            return [json, null];
+          } catch (e) {
+            console.error(e);
+            throw [null, e];
+          }
+        }
+
+        function organizeData(data, timeframe) {
+          return data.map((item) => {
+            return {
+              title: item.title,
+              timeframe: timeframe,
+              current: item.timeframes[timeframe].current,
+              previous: item.timeframes[timeframe].previous,
+            };
+          });
+        }
+
+        /**
+         * @param {object} jsonData
+         * @param {string} [jsonData.title]
+         * @param {string} [jsonData.timeframe]
+         * @param {number} [jsonData.current]
+         * @param {number} [jsonData.previous]
+         */
+        function createCardComponent(data) {
+          const key = data.title.replace(" ", "");
+          const bg = bgMap[key];
+          const previousTime = timeMap[data.timeframe];
+
+          /** create all elements */
+          const card = document.createElement("div");
+          card.classList.add(
+            bg.color,
+            "card",
+            "flex",
+            "h-[170px]",
+            "flex-col",
+            "md:h-full",
+          );
+          card.setAttribute("data-component", "card");
+
+          const bgImg = document.createElement("img");
+          bgImg.classList.add(
+            "-translate-x-1/8",
+            "-translate-y-1/8",
+            "absolute",
+            "right-0",
+            "top-0",
+          );
+          bgImg.src = bg.icon;
+          bgImg.alt = `${data.title} icon`;
+
+          const content = document.createElement("div");
+          content.classList.add(
+            "bg-dark-blue",
+            "hover:bg-desaturated-blue",
+            "card",
+            "z-10",
+            "mt-auto",
+            "cursor-pointer",
+            "px-5",
+            "py-8",
+            "transition-colors",
+            "duration-300",
+          );
+
+          const header = document.createElement("div");
+          header.classList.add("flex", "items-center", "justify-between");
+
+          const title = document.createElement("p");
+          title.classList.add("text-lg", "font-bold");
+          title.textContent = data.title;
+
+          const menuIcon = document.createElement("img");
+          menuIcon.classList.add("hover:opacity-50");
+          menuIcon.src = "./images/icon-ellipsis.svg";
+          menuIcon.alt = "ellipsis";
+
+          header.appendChild(title);
+          header.appendChild(menuIcon);
+
+          const timeInfo = document.createElement("div");
+          timeInfo.classList.add(
+            "mt-1",
+            "flex",
+            "items-center",
+            "justify-between",
+            "md:mt-2",
+            "md:flex-wrap",
+            "md:gap-4",
+          );
+
+          const currentTime = document.createElement("p");
+          currentTime.classList.add("text-3xl", "font-light", "md:text-6xl");
+          currentTime.textContent = `${data.current}hrs`;
+
+          const previousTimeText = document.createElement("p");
+          previousTimeText.classList.add("text-sm", "text-gray-300");
+          previousTimeText.textContent = `${previousTime} - ${data.previous}hrs`;
+          /** done */
+
+          timeInfo.appendChild(currentTime);
+          timeInfo.appendChild(previousTimeText);
+
+          content.appendChild(header);
+          content.appendChild(timeInfo);
+
+          card.appendChild(bgImg);
+          card.appendChild(content);
+
+          return card;
+        }
+
+        /**
+         * @param {HTMLElement} rootEl
+         * @param {object[]} data
+         */
+        function renderCards(rootEl, data) {
+          const cards = document.querySelectorAll('[data-component="card"]');
+          cards.forEach((card) => card.remove());
+          data.forEach((item) => {
+            rootEl.append(createCardComponent(item));
+          });
+        }
+
+        // init
+        const [jsonData, error] = await fetchData();
+        const dashboard = document.querySelector("#dashboard");
+
+        let timeframeChoice = "weekly";
+        let filterData = organizeData(jsonData, timeframeChoice);
+
+        const timeframeBtns = document.querySelectorAll("button[data-time]");
+        timeframeBtns.forEach((btn) => {
+          if (btn.dataset.time === timeframeChoice) {
+            btn.ariaSelected = true;
+          }
+        });
+
+        renderCards(dashboard, filterData);
+        // end
+
+        timeframeBtns.forEach((btn) =>
+          btn.addEventListener("click", function handleTimeframeClick(e) {
+            const btnEl = e.target;
+            btnEl.ariaSelected = true;
+            timeframeBtns.forEach((btn) =>
+              btn.setAttribute(
+                "aria-selected",
+                btn === btnEl ? "true" : "false",
+              ),
+            );
+
+            const timeframe = btnEl.dataset.time;
+            if (!timeframe) return;
+
+            timeframeChoice = timeframe;
+            filterData = organizeData(jsonData, timeframeChoice);
+            renderCards(dashboard, filterData);
+          }),
+        );
+      })();
+    </script>
   </body>
 </html>
