@@ -1,44 +1,336 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Tip calculator app</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./output.css" />
+    <title>Frontend Mentor | Tip calculator app</title>
+  </head>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+  <body class="font-space-mono bg-light-grayish-cyan text-2xl">
+    <header class="flex h-32 items-center justify-center md:h-52">
+      <h1>
+        <img src="./images/logo.svg" alt="logo image" />
+      </h1>
+    </header>
+    <main class="flex justify-center">
+      <div
+        class="container flex flex-col gap-7 rounded-3xl bg-white p-6 md:w-[980px] md:flex-row"
+      >
+        <section class="flex flex-col gap-7 p-2 md:basis-1/2 md:gap-12">
+          <div>
+            <label>
+              <p
+                class="text-dark-grayish-cyan mb-3 flex justify-between text-base font-bold"
+              >
+                <span>Bill</span>
+                <span data-component="bill-error" class="text-red-400"></span>
+              </p>
+              <div class="bg-very-light-grayish-cyan relative rounded-lg">
+                <img
+                  class="absolute left-4 top-[50%] -translate-y-[50%]"
+                  src="./images/icon-dollar.svg"
+                  alt="dollar icon"
+                />
+                <input
+                  data-component="bill-input"
+                  class="text-very-dark-cyan focus:outline-strong-cyan w-full rounded-lg border-none bg-inherit p-2 text-right font-bold outline-0 focus:outline-2"
+                  type="text"
+                />
+              </div>
+            </label>
+          </div>
+          <div>
+            <p class="text-dark-grayish-cyan mb-3 text-base font-bold">
+              Select Tip %
+            </p>
+            <div
+              class="*:aria-selected:bg-strong-cyan *:aria-selected:text-very-dark-cyan grid grid-cols-2 gap-4 *:cursor-pointer *:rounded-lg *:px-4 *:py-2 *:font-bold md:grid-cols-3"
+            >
+              <button
+                data-component="tip-btn"
+                class="bg-very-dark-cyan text-white"
+              >
+                5%
+              </button>
+              <button
+                data-component="tip-btn"
+                class="bg-very-dark-cyan text-white"
+              >
+                10%
+              </button>
+              <button
+                data-component="tip-btn"
+                class="bg-very-dark-cyan text-white"
+              >
+                15%
+              </button>
+              <button
+                data-component="tip-btn"
+                class="bg-very-dark-cyan text-white"
+              >
+                25%
+              </button>
+              <button
+                data-component="tip-btn"
+                class="bg-very-dark-cyan text-white"
+              >
+                50%
+              </button>
+              <input
+                data-component="tip-input"
+                class="bg-very-light-grayish-cyan text-very-dark-cyan focus:outline-strong-cyan text-right focus:outline-2"
+                type="text"
+                placeholder="Custom"
+              />
+            </div>
+          </div>
+          <div>
+            <label>
+              <p
+                class="text-dark-grayish-cyan mb-3 flex justify-between text-base font-bold"
+              >
+                <span>Number of People</span>
+                <span data-component="people-error" class="text-red-400"></span>
+              </p>
+              <div class="bg-very-light-grayish-cyan relative rounded-lg">
+                <img
+                  class="absolute left-4 top-[50%] -translate-y-[50%]"
+                  src="./images/icon-person.svg"
+                  alt="person icon"
+                />
+                <input
+                  data-component="people-input"
+                  class="text-very-dark-cyan focus:outline-strong-cyan w-full rounded-lg border-none bg-inherit p-2 text-right font-bold outline-0 focus:outline-2"
+                  type="text"
+                  value="0"
+                />
+              </div>
+            </label>
+          </div>
+        </section>
+        <section
+          class="bg-very-dark-cyan md:max-w-1/2 flex flex-col gap-4 rounded-2xl p-5 pt-10 text-white md:basis-1/2 md:gap-12 md:p-12"
+        >
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-base font-bold tracking-wide">Tip Amount</p>
+              <p class="text-grayish-cyan text-sm font-extralight">/ person</p>
+            </div>
+            <div>
+              <p
+                class="*:text-strong-cyan flex items-center gap-1 *:text-3xl *:font-bold md:*:text-5xl"
+              >
+                <span>$</span>
+                <span data-component="tip-amount"></span>
+              </p>
+            </div>
+          </div>
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-base font-bold tracking-wide">Total</p>
+              <p class="text-grayish-cyan text-sm font-extralight">/ person</p>
+            </div>
+            <div>
+              <p
+                class="*:text-strong-cyan flex items-center gap-1 *:text-3xl *:font-bold md:*:text-5xl"
+              >
+                <span>$</span>
+                <span data-component="total"></span>
+              </p>
+            </div>
+          </div>
+          <button
+            class="bg-strong-cyan text-very-dark-cyan hover:bg-light-grayish-cyan cursor-pointer rounded-lg py-2 text-xl font-bold uppercase md:mt-auto"
+            data-component="reset-btn"
+          >
+            Reset
+          </button>
+        </section>
+      </div>
+    </main>
+    <script>
+      const billInput = document.querySelector('[data-component="bill-input"]');
+      const tipBtns = document.querySelectorAll('[data-component="tip-btn"]');
+      const tipInput = document.querySelector('[data-component="tip-input"]');
+      const peopleInput = document.querySelector(
+        '[data-component="people-input"]',
+      );
+      const tipAmount = document.querySelector('[data-component="tip-amount"]');
+      const total = document.querySelector('[data-component="total"]');
+      const billError = document.querySelector('[data-component="bill-error"]');
+      const peopleError = document.querySelector(
+        '[data-component="people-error"]',
+      );
+      const resetBtn = document.querySelector('[data-component="reset-btn"]');
 
-  Bill
+      const observerValues = new Proxy(
+        {
+          bill: 0,
+          tip: 0,
+          people: 1,
+        },
+        {
+          set(target, key, value, receiver) {
+            Reflect.set(target, key, value);
+            const avgTip = calculateAvgTip(observerValues);
+            const avgTotal = calculateAvgTotal(observerValues);
+            return render({ avgTip, avgTotal });
+          },
+        },
+      );
 
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
+      function calculateAvgTip({ bill, tip, people }) {
+        return ((tip / 100) * bill) / people;
+      }
 
-  Number of People
+      function calculateAvgTotal({ bill, tip, people }) {
+        return ((tip / 100 + 1) * bill) / people;
+      }
 
-  Tip Amount
-  / person
+      function render({ avgTip, avgTotal }) {
+        tipAmount.textContent = avgTip.toFixed(2);
+        total.textContent = avgTotal.toFixed(2);
+      }
 
-  Total
-  / person
+      function onBillInput(e) {
+        billError.textContent = "";
+        const billInput = e.target;
+        const value = parseFloat(billInput.value);
+        let errorText = "";
+        if (isNaN(value)) {
+          errorText = "must be number";
+        }
+        if (value < 0) {
+          errorText = "must greater then 0";
+        }
+        if (errorText !== "") {
+          billInput.classList.remove("focus:outline-strong-cyan");
+          billInput.classList.add(
+            "outline-2",
+            "outline-red-400",
+            "focus:outline-red-400",
+          );
+          billError.textContent = errorText;
+          return;
+        }
+        billInput.classList.remove(
+          "outline-2",
+          "outline-red-400",
+          "focus:outline-red-400",
+        );
+        billInput.classList.add("focus:outline-strong-cyan");
+        billError.textContent = "";
+        observerValues.bill = value;
+      }
 
-  Reset
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+      function onPeopleInput(e) {
+        peopleError.textContent = "";
+        const peopleInput = e.target;
+        const value = parseInt(peopleInput.value);
+        let errorText = "";
+        if (isNaN(value)) {
+          errorText = "must be number";
+        }
+        if (value < 0) {
+          errorText = "must greater then 0";
+        }
+        if (errorText !== "") {
+          peopleInput.classList.remove("focus:outline-strong-cyan");
+          peopleInput.classList.add(
+            "outline-2",
+            "outline-red-400",
+            "focus:outline-red-400",
+          );
+          peopleError.textContent = errorText;
+          return;
+        }
+        peopleInput.classList.remove(
+          "outline-2",
+          "outline-red-400",
+          "focus:outline-red-400",
+        );
+        billInput.classList.add("focus:outline-strong-cyan");
+        peopleError.textContent = "";
+        observerValues.people = value;
+      }
+
+      /**
+       * Handles the selection of a tip percentage button.
+       *
+       * @param {MouseEvent} e
+       */
+      function onTipSelect(e) {
+        // Clear the custom tip input field if a tip button is selected
+        if (tipInput.value !== "") {
+          tipInput.value = "";
+        }
+
+        const btn = e.target;
+        btn.setAttribute("aria-selected", "true");
+        tipBtns.forEach((btn) => {
+          if (btn !== e.target) {
+            btn.setAttribute("aria-selected", "false");
+          }
+        });
+        observerValues.tip = parseFloat(btn.textContent);
+      }
+
+      function onTipInput(e) {
+        const tipInput = e.target;
+        tipBtns.forEach((btn) => btn.setAttribute("aria-selected", "false"));
+        const value = parseInt(e.target.value);
+        if (isNaN(value)) {
+          tipInput.classList.add("focus:outline-strong-cyan");
+          tipInput.classList.remove("outline-2", "outline-red-400");
+          return (observerValues.tip = 0);
+        }
+        if (value < 0) {
+          tipInput.classList.remove("focus:outline-strong-cyan");
+          tipInput.classList.add(
+            "outline-2",
+            "outline-red-400",
+            "focus:outline-red-400",
+          );
+          return (observerValues.tip = 0);
+        }
+        tipInput.classList.add("focus:outline-strong-cyan");
+        observerValues.tip = value;
+      }
+
+      function reset() {
+        billInput.value = observerValues.bill;
+        peopleInput.value = observerValues.people;
+        tipInput.value = "";
+      }
+
+      function init() {
+        reset();
+        const avgTip = calculateAvgTip(observerValues);
+        const avgTotal = calculateAvgTotal(observerValues);
+        render({ avgTip, avgTotal });
+
+        billInput.addEventListener("keyup", onBillInput);
+        peopleInput.addEventListener("keyup", onPeopleInput);
+        tipBtns.forEach((btn) => btn.addEventListener("click", onTipSelect));
+        tipInput.addEventListener("keyup", onTipInput);
+        resetBtn.addEventListener("click", () => {
+          reset();
+          observerValues.bill = 0;
+          observerValues.tip = 0;
+          observerValues.people = 1;
+        });
+      }
+
+      init();
+    </script>
+  </body>
 </html>
