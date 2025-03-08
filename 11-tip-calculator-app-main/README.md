@@ -35,7 +35,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [solution URL here](https://paikai-lee.github.io/frontend-mentor-solutions/11-tip-caculator-app-main/)
+- Solution URL: [solution URL here](https://paikai-lee.github.io/frontend-mentor-solutions/11-tip-calculator-app-main/)
 
 ## My process
 
