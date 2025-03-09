@@ -1,38 +1,157 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="./output.css">
-  <title>Frontend Mentor | Interactive rating component</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./output.css" />
+    <title>Frontend Mentor | Interactive rating component</title>
+  </head>
 
-</head>
-<body>
+  <body
+    class="font-overpass bg-very-dark-blue flex min-h-screen items-center justify-center text-[15px] text-white"
+  >
+    <main>
+      <div
+        class="bg-dark-blue container mx-auto flex max-w-[90%] flex-col gap-6 rounded-2xl p-6 md:w-[375px] md:max-w-full"
+      >
+        <div
+          class="flex size-10 items-center justify-center rounded-full bg-gray-700"
+        >
+          <img src="./images/icon-star.svg" alt="icon star" />
+        </div>
+        <h1 class="text-2xl text-white">How did we do?</h1>
+        <p class="text-light-gray text-sm">
+          Please let us know how we did with your support request. All feedback
+          is appreciated to help us improve our offering!
+        </p>
+        <div
+          class="text-light-gray flex justify-between gap-4 *:size-10 *:cursor-pointer *:rounded-full *:p-3 *:transition-colors *:duration-100"
+        >
+          <input
+            class="hover:bg-primary-orange hover:text-very-dark-blue aria-selected:text-very-dark-blue bg-gray-700 aria-selected:bg-white"
+            data-component="rating-btn"
+            aria-selected="false"
+            value="1"
+            type="button"
+          />
+          <input
+            class="hover:bg-primary-orange hover:text-very-dark-blue aria-selected:text-very-dark-blue bg-gray-700 aria-selected:bg-white"
+            data-component="rating-btn"
+            aria-selected="false"
+            value="2"
+            type="button"
+          />
+          <input
+            data-component="rating-btn"
+            aria-selected="false"
+            class="hover:bg-primary-orange hover:text-very-dark-blue aria-selected:text-very-dark-blue bg-gray-700 aria-selected:bg-white"
+            value="3"
+            type="button"
+          />
+          <input
+            data-component="rating-btn"
+            aria-selected="false"
+            class="hover:bg-primary-orange hover:text-very-dark-blue aria-selected:text-very-dark-blue bg-gray-700 aria-selected:bg-white"
+            value="4"
+            type="button"
+          />
+          <input
+            data-component="rating-btn"
+            aria-selected="false"
+            class="hover:bg-primary-orange hover:text-very-dark-blue aria-selected:text-very-dark-blue bg-gray-700 aria-selected:bg-white"
+            value="5"
+            type="button"
+          />
+        </div>
+        <button
+          data-component="submit"
+          class="bg-primary-orange hover:text-soft-orange text-very-dark-blue w-full cursor-pointer rounded-full py-3 font-bold uppercase tracking-widest transition-colors duration-100 hover:bg-white"
+        >
+          Submit
+        </button>
+      </div>
+    </main>
 
-  <!-- Rating state start -->
+    <!-- Thank you state start -->
+    <dialog
+      class="fixed left-1/2 top-1/2 w-full max-w-none -translate-x-1/2 -translate-y-1/2 bg-transparent"
+    >
+      <div
+        class="bg-dark-blue container relative mx-auto flex max-w-[90%] flex-col items-center gap-6 rounded-2xl p-6 md:w-[375px]"
+      >
+        <img src="./images/illustration-thank-you.svg" alt="icon thank you" />
+        <p class="text-primary-orange rounded-full bg-gray-700 px-4 py-1">
+          You selected
+          <span data-component="selected-rating"></span>
+          out of 5
+        </p>
+        <h2 class="text-2xl text-white">Thank you!</h2>
+        <p class="text-light-gray text-center">
+          We appreciate you taking the time to give a rating. If you ever need
+          more support, don’t hesitate to get in touch!
+        </p>
+        <button
+          autofocus
+          data-component="dialog-close"
+          class="bg-primary-orange absolute right-4 top-4 size-9 cursor-pointer rounded-full leading-10 transition-colors duration-100 hover:bg-white"
+        >
+          X
+        </button>
+      </div>
+    </dialog>
 
-  How did we do?
+    <!-- Thank you state end -->
+    <script>
+      let selectedRating = null;
 
-  Please let us know how we did with your support request. All feedback is appreciated 
-  to help us improve our offering!
+      const dialog = document.querySelector("dialog");
+      const dialogCloseBtn = document.querySelector(
+        '[data-component="dialog-close"]',
+      );
+      const submitBtn = document.querySelector('[data-component="submit"]');
+      const selectedRatingEl = document.querySelector(
+        '[data-component="selected-rating"]',
+      );
+      const ratingBtns = document.querySelectorAll(
+        '[data-component="rating-btn"]',
+      );
 
-  1 2 3 4 5
+      function onRatingClick(e) {
+        const btnEl = e.target;
+        ratingBtns.forEach((btn) => {
+          if (btn !== btnEl) {
+            btn.setAttribute("aria-selected", "false");
+          }
+        });
+        btnEl.setAttribute("aria-selected", "true");
+        selectedRating = btnEl.value;
+      }
 
-  Submit
+      function onDialogCloseClick(e) {
+        ratingBtns.forEach((btn) => {
+          btn.setAttribute("aria-selected", "false");
+        });
+        selectedRating = null;
+        dialog.close();
+      }
 
-  <!-- Rating state end -->
+      function onSubmitClick(e) {
+        if (!selectedRating) return;
+        selectedRatingEl.textContent = selectedRating;
+        dialog.showModal();
+      }
 
-  <!-- Thank you state start -->
-
-  You selected <!-- Add rating here --> out of 5
-
-  Thank you!
-
-  We appreciate you taking the time to give a rating. If you ever need more support, 
-  don’t hesitate to get in touch!
-
-  <!-- Thank you state end -->
-</body>
+      ratingBtns.forEach((btn) => btn.addEventListener("click", onRatingClick));
+      dialogCloseBtn.addEventListener("click", onDialogCloseClick);
+      submitBtn.addEventListener("click", onSubmitClick);
+    </script>
+  </body>
 </html>
