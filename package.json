@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "format": "prettier . --write",
-    "dev:11": "npx @tailwindcss\/cli -i ./11-tip-calculator-app-main/input.css -o ./11-tip-calculator-app-main/output.css --watch"
+    "dev:11": "npx @tailwindcss\/cli -i ./11-tip-calculator-app-main/input.css -o ./11-tip-calculator-app-main/output.css --watch",
+    "dev:12": "npx @tailwindcss\/cli -i ./12-interactive-rating-component-main/input.css -o ./12-interactive-rating-component-main/output.css --watch"
   },
   "keywords": [],
   "author": "",
