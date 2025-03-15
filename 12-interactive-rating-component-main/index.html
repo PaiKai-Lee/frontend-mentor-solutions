@@ -19,13 +19,13 @@
     class="font-overpass bg-very-dark-blue flex min-h-screen items-center justify-center text-[15px] text-white"
   >
     <main>
-      <div
+      <section
         class="bg-dark-blue container mx-auto flex max-w-[90%] flex-col gap-6 rounded-2xl p-6 md:w-[375px] md:max-w-full"
       >
         <div
           class="flex size-10 items-center justify-center rounded-full bg-gray-700"
         >
-          <img src="./images/icon-star.svg" alt="icon star" />
+          <img src="./images/icon-star.svg" alt="Star icon" />
         </div>
         <h1 class="text-2xl text-white">How did we do?</h1>
         <p class="text-light-gray text-sm">
@@ -36,37 +36,42 @@
           class="text-light-gray flex justify-between gap-4 *:size-10 *:cursor-pointer *:rounded-full *:p-3 *:transition-colors *:duration-100"
         >
           <input
-            class="hover:bg-primary-orange hover:text-very-dark-blue aria-selected:text-very-dark-blue bg-gray-700 aria-selected:bg-white"
+            class="hover:bg-primary-orange hover:text-very-dark-blue aria-pressed:text-very-dark-blue bg-gray-700 aria-pressed:bg-white"
             data-component="rating-btn"
-            aria-selected="false"
+            aria-label="Rating 1"
+            aria-pressed="false"
             value="1"
             type="button"
           />
           <input
-            class="hover:bg-primary-orange hover:text-very-dark-blue aria-selected:text-very-dark-blue bg-gray-700 aria-selected:bg-white"
+            class="hover:bg-primary-orange hover:text-very-dark-blue aria-pressed:text-very-dark-blue bg-gray-700 aria-pressed:bg-white"
             data-component="rating-btn"
-            aria-selected="false"
+            aria-label="Rating 2"
+            aria-pressed="false"
             value="2"
             type="button"
           />
           <input
+            class="hover:bg-primary-orange hover:text-very-dark-blue aria-pressed:text-very-dark-blue bg-gray-700 aria-pressed:bg-white"
             data-component="rating-btn"
-            aria-selected="false"
-            class="hover:bg-primary-orange hover:text-very-dark-blue aria-selected:text-very-dark-blue bg-gray-700 aria-selected:bg-white"
+            aria-label="Rating 3"
+            aria-pressed="false"
             value="3"
             type="button"
           />
           <input
+            class="hover:bg-primary-orange hover:text-very-dark-blue aria-pressed:text-very-dark-blue bg-gray-700 aria-pressed:bg-white"
             data-component="rating-btn"
-            aria-selected="false"
-            class="hover:bg-primary-orange hover:text-very-dark-blue aria-selected:text-very-dark-blue bg-gray-700 aria-selected:bg-white"
+            aria-label="Rating 4"
+            aria-pressed="false"
             value="4"
             type="button"
           />
           <input
+            class="hover:bg-primary-orange hover:text-very-dark-blue aria-pressed:text-very-dark-blue bg-gray-700 aria-pressed:bg-white"
             data-component="rating-btn"
-            aria-selected="false"
-            class="hover:bg-primary-orange hover:text-very-dark-blue aria-selected:text-very-dark-blue bg-gray-700 aria-selected:bg-white"
+            aria-label="Rating 5"
+            aria-pressed="false"
             value="5"
             type="button"
           />
@@ -77,12 +82,13 @@
         >
           Submit
         </button>
-      </div>
+      </section>
     </main>
 
     <!-- Thank you state start -->
     <dialog
       class="fixed left-1/2 top-1/2 w-full max-w-none -translate-x-1/2 -translate-y-1/2 bg-transparent"
+      aria-labelledby="dialog-title"
     >
       <div
         class="bg-dark-blue container relative mx-auto flex max-w-[90%] flex-col items-center gap-6 rounded-2xl p-6 md:w-[375px]"
@@ -128,16 +134,16 @@
         const btnEl = e.target;
         ratingBtns.forEach((btn) => {
           if (btn !== btnEl) {
-            btn.setAttribute("aria-selected", "false");
+            btn.setAttribute("aria-pressed", "false");
           }
         });
-        btnEl.setAttribute("aria-selected", "true");
+        btnEl.setAttribute("aria-pressed", "true");
         selectedRating = btnEl.value;
       }
 
       function onDialogCloseClick(e) {
         ratingBtns.forEach((btn) => {
-          btn.setAttribute("aria-selected", "false");
+          btn.setAttribute("aria-pressed", "false");
         });
         selectedRating = null;
         dialog.close();
