@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" type="text/css" href="./output.css" />
+    <title>Frontend Mentor | FAQ accordion</title>
+  </head>
+
+  <body class="font-work-sans text-base">
+    <div class="bg-light-pink fixed left-0 right-0 top-0 -z-10 min-h-screen">
+      <picture class="w-full">
+        <source
+          media="(min-width: 1024px)"
+          srcset="./assets/images/background-pattern-desktop.svg"
+        />
+        <img
+          src="./assets/images/background-pattern-mobile.svg"
+          alt="bg-pattern-mobile"
+        />
+      </picture>
+    </div>
+    <main class="flex min-h-screen items-center justify-center">
+      <section
+        class="container mx-auto max-w-[90%] rounded-2xl bg-white p-5 md:max-w-[580px] md:p-8"
+      >
+        <div class="mb-2 flex items-center gap-6">
+          <img
+            class="size-6 md:size-8"
+            src="./assets/images/icon-star.svg"
+            alt="Start icon"
+          />
+          <h1 class="text-3xl font-bold md:text-4xl">FAQs</h1>
+        </div>
+        <div>
+          <div
+            data-component="accordion"
+            aria-pressed="false"
+            tabindex="1"
+            class="border-light-pink border-b-[1px] py-4"
+          >
+            <div
+              data-component="accordion-header"
+              class="group flex cursor-pointer items-center justify-between"
+            >
+              <p
+                class="text-dark-purple group-hover:text-hover-purple w-[75%] font-bold md:w-full"
+              >
+                What is Frontend Mentor, and how will it help me?
+              </p>
+              <img
+                class="block"
+                src="./assets/images/icon-plus.svg"
+                alt="arrow icon"
+              />
+              <img
+                class="hidden"
+                src="./assets/images/icon-minus.svg"
+                alt="minus icon"
+              />
+            </div>
+            <div
+              data-component="accordion-content"
+              aria-expanded="false"
+              class="max-h-0 overflow-hidden transition-[max-height] duration-100 ease-in-out"
+            >
+              <p class="text-grayish-purple pt-4 text-sm">
+                Frontend Mentor offers realistic coding challenges to help
+                developers improve their frontend coding skills with projects in
+                HTML, CSS, and JavaScript. It's suitable for all levels and
+                ideal for portfolio building.
+              </p>
+            </div>
+          </div>
+          <div
+            data-component="accordion"
+            aria-pressed="false"
+            tabindex="2"
+            class="border-light-pink border-b-[1px] py-4"
+          >
+            <div
+              data-component="accordion-header"
+              class="group flex cursor-pointer items-center justify-between"
+            >
+              <p
+                class="text-dark-purple group-hover:text-hover-purple w-[75%] font-bold md:w-full"
+              >
+                Is Frontend Mentor free?
+              </p>
+              <img
+                class="block"
+                src="./assets/images/icon-plus.svg"
+                alt="arrow icon"
+              />
+              <img
+                class="hidden"
+                src="./assets/images/icon-minus.svg"
+                alt="minus icon"
+              />
+            </div>
+            <div
+              data-component="accordion-content"
+              aria-expanded="false"
+              class="max-h-0 overflow-hidden transition-[max-height] duration-100 ease-in-out"
+            >
+              <p class="text-grayish-purple pt-4 text-sm">
+                Yes, Frontend Mentor offers both free and premium coding
+                challenges, with the free option providing access to a range of
+                projects suitable for all skill levels.
+              </p>
+            </div>
+          </div>
+          <div
+            data-component="accordion"
+            aria-pressed="false"
+            tabindex="3"
+            class="border-light-pink border-b-[1px] py-4"
+          >
+            <div
+              data-component="accordion-header"
+              class="group flex cursor-pointer items-center justify-between"
+            >
+              <p
+                class="text-dark-purple group-hover:text-hover-purple w-[75%] font-bold md:w-full"
+              >
+                Can I use Frontend Mentor projects in my portfolio?
+              </p>
+              <img
+                class="block"
+                src="./assets/images/icon-plus.svg"
+                alt="arrow icon"
+              />
+              <img
+                class="hidden"
+                src="./assets/images/icon-minus.svg"
+                alt="minus icon"
+              />
+            </div>
+            <div
+              data-component="accordion-content"
+              aria-expanded="false"
+              class="max-h-0 overflow-hidden transition-[max-height] duration-100 ease-in-out"
+            >
+              <p class="text-grayish-purple pt-4 text-sm">
+                Yes, you can use projects completed on Frontend Mentor in your
+                portfolio. It's an excellent way to showcase your skills to
+                potential employers!
+              </p>
+            </div>
+          </div>
+          <div
+            data-component="accordion"
+            aria-pressed="false"
+            tabindex="4"
+            class="border-light-pink border-b-[1px] py-4 last:border-0 last:pb-0"
+          >
+            <div
+              data-component="accordion-header"
+              class="group flex cursor-pointer items-center justify-between"
+            >
+              <p
+                class="text-dark-purple group-hover:text-hover-purple w-[75%] font-bold md:w-full"
+              >
+                How can I get help if I'm stuck on a Frontend Mentor challenge?
+              </p>
+              <img
+                class="block"
+                src="./assets/images/icon-plus.svg"
+                alt="arrow icon"
+              />
+              <img
+                class="hidden"
+                src="./assets/images/icon-minus.svg"
+                alt="minus icon"
+              />
+            </div>
+            <div
+              data-component="accordion-content"
+              aria-expanded="false"
+              class="max-h-0 overflow-hidden transition-[max-height] duration-100 ease-in-out"
+            >
+              <p class="text-grayish-purple pt-4 text-sm">
+                The best place to get help is inside Frontend Mentor's Discord
+                community. There's a help channel where you can ask questions
+                and seek support from other community members.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const accordions = document.querySelectorAll(
+        "[data-component='accordion']",
+      );
+      accordions.forEach((accordion) => {
+        const accordionHeader = accordion.querySelector(
+          "[data-component='accordion-header']",
+        );
+        const accordionContent = accordion.querySelector(
+          "[data-component='accordion-content']",
+        );
+        const plusIcon = accordionHeader.children[1];
+        const minusIcon = accordionHeader.children[2];
+
+        function toggleAccordion(e) {
+          const el = e.currentTarget;
+          const ariaPressed =
+            el.getAttribute("aria-pressed") === "true" ? "false" : "true";
+          el.setAttribute("aria-pressed", ariaPressed);
+          const ariaExpanded =
+            accordionContent.getAttribute("aria-expanded") === "true"
+              ? "false"
+              : "true";
+          accordionContent.setAttribute("aria-expanded", ariaExpanded);
+          accordionContent.classList.toggle("max-h-[500px]");
+          plusIcon.classList.toggle("hidden");
+          minusIcon.classList.toggle("hidden");
+        }
+
+        accordion.addEventListener("click", toggleAccordion);
+        accordion.addEventListener("keyup", (e) => {
+          if(e.key === "Enter") {
+            toggleAccordion(e);
+          }
+        })
+      });
+    </script>
+  </body>
+</html>
