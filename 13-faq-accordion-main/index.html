@@ -23,14 +23,15 @@
           srcset="./assets/images/background-pattern-desktop.svg"
         />
         <img
+          class="w-full"
           src="./assets/images/background-pattern-mobile.svg"
-          alt="bg-pattern-mobile"
+          alt="bg image"
         />
       </picture>
     </div>
     <main class="flex min-h-screen items-center justify-center">
       <section
-        class="container mx-auto max-w-[90%] rounded-2xl bg-white p-5 md:max-w-[580px] md:p-8"
+        class="container mx-auto max-w-[90%] rounded-2xl bg-white p-5 shadow-lg shadow-stone-300 md:max-w-[580px] md:p-8"
       >
         <div class="mb-2 flex items-center gap-6">
           <img
@@ -222,10 +223,8 @@
             el.getAttribute("aria-pressed") === "true" ? "false" : "true";
           el.setAttribute("aria-pressed", ariaPressed);
           const ariaExpanded =
-          el.getAttribute("aria-expanded") === "true"
-              ? "false"
-              : "true";
-              el.setAttribute("aria-expanded", ariaExpanded);
+            el.getAttribute("aria-expanded") === "true" ? "false" : "true";
+          el.setAttribute("aria-expanded", ariaExpanded);
           accordionContent.classList.toggle("max-h-[500px]");
           plusIcon.classList.toggle("hidden");
           minusIcon.classList.toggle("hidden");
@@ -233,10 +232,10 @@
 
         accordion.addEventListener("click", toggleAccordion);
         accordion.addEventListener("keyup", (e) => {
-          if(e.key === "Enter") {
+          if (e.key === "Enter") {
             toggleAccordion(e);
           }
-        })
+        });
       });
     </script>
   </body>
