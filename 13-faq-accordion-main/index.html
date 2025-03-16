@@ -43,7 +43,9 @@
         <div>
           <div
             data-component="accordion"
+            role="button"
             aria-pressed="false"
+            aria-expanded="false"
             tabindex="1"
             class="border-light-pink border-b-[1px] py-4"
           >
@@ -69,7 +71,6 @@
             </div>
             <div
               data-component="accordion-content"
-              aria-expanded="false"
               class="max-h-0 overflow-hidden transition-[max-height] duration-100 ease-in-out"
             >
               <p class="text-grayish-purple pt-4 text-sm">
@@ -82,7 +83,9 @@
           </div>
           <div
             data-component="accordion"
+            role="button"
             aria-pressed="false"
+            aria-expanded="false"
             tabindex="2"
             class="border-light-pink border-b-[1px] py-4"
           >
@@ -108,7 +111,6 @@
             </div>
             <div
               data-component="accordion-content"
-              aria-expanded="false"
               class="max-h-0 overflow-hidden transition-[max-height] duration-100 ease-in-out"
             >
               <p class="text-grayish-purple pt-4 text-sm">
@@ -120,7 +122,9 @@
           </div>
           <div
             data-component="accordion"
+            role="button"
             aria-pressed="false"
+            aria-expanded="false"
             tabindex="3"
             class="border-light-pink border-b-[1px] py-4"
           >
@@ -146,7 +150,6 @@
             </div>
             <div
               data-component="accordion-content"
-              aria-expanded="false"
               class="max-h-0 overflow-hidden transition-[max-height] duration-100 ease-in-out"
             >
               <p class="text-grayish-purple pt-4 text-sm">
@@ -158,7 +161,9 @@
           </div>
           <div
             data-component="accordion"
+            role="button"
             aria-pressed="false"
+            aria-expanded="false"
             tabindex="4"
             class="border-light-pink border-b-[1px] py-4 last:border-0 last:pb-0"
           >
@@ -184,7 +189,6 @@
             </div>
             <div
               data-component="accordion-content"
-              aria-expanded="false"
               class="max-h-0 overflow-hidden transition-[max-height] duration-100 ease-in-out"
             >
               <p class="text-grayish-purple pt-4 text-sm">
@@ -218,10 +222,10 @@
             el.getAttribute("aria-pressed") === "true" ? "false" : "true";
           el.setAttribute("aria-pressed", ariaPressed);
           const ariaExpanded =
-            accordionContent.getAttribute("aria-expanded") === "true"
+          el.getAttribute("aria-expanded") === "true"
               ? "false"
               : "true";
-          accordionContent.setAttribute("aria-expanded", ariaExpanded);
+              el.setAttribute("aria-expanded", ariaExpanded);
           accordionContent.classList.toggle("max-h-[500px]");
           plusIcon.classList.toggle("hidden");
           minusIcon.classList.toggle("hidden");
