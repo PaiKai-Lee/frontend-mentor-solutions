@@ -7,7 +7,8 @@
     "format": "prettier . --write",
     "dev:11": "npx @tailwindcss\/cli -i ./11-tip-calculator-app-main/input.css -o ./11-tip-calculator-app-main/output.css --watch",
     "dev:12": "npx @tailwindcss\/cli -i ./12-interactive-rating-component-main/input.css -o ./12-interactive-rating-component-main/output.css --watch",
-    "dev:13": "npx @tailwindcss\/cli -i ./13-faq-accordion-main/input.css -o ./13-faq-accordion-main/output.css --watch"
+    "dev:13": "npx @tailwindcss\/cli -i ./13-faq-accordion-main/input.css -o ./13-faq-accordion-main/output.css --watch",
+    "dev:14": "npx @tailwindcss\/cli -i ./14-contact-form-main/input.css -o ./14-contact-form-main/output.css --watch"
   },
   "keywords": [],
   "author": "",
