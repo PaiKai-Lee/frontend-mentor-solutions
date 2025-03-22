@@ -1,44 +1,247 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  <link rel="stylesheet" href="./output.css">
-  
-  <title>Frontend Mentor | Contact form</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./output.css" />
+    <title>Frontend Mentor | Contact form</title>
+    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
+  </head>
 
-</head>
-<body>
+  <body class="bg-primary-green-200 font-karla text-base">
+    <div
+      data-component="toast"
+      aria-hidden="true"
+      class="not-aria-hidden:translate-y-10 -translate-y-50 fixed left-1/2 w-[85%] -translate-x-1/2 overflow-hidden rounded-lg bg-emerald-950 p-5 text-white transition-all duration-100 md:w-fit"
+    >
+      <div class="flex items-center gap-3">
+        <img
+          src="./assets/images/icon-success-check.svg"
+          alt="success send icon"
+        />
+        <p class="text-xl font-bold">Message Sent!</p>
+      </div>
+      <p class="mt-2 font-light">
+        Thanks for completing the form. We'll be in touch soon!
+      </p>
+    </div>
+    <main class="flex min-h-screen items-center justify-center p-5 md:p-0">
+      <div
+        class="container max-w-[95%] rounded-2xl bg-white p-5 md:max-w-[760px] md:p-8"
+      >
+        <h1 class="text-[1.75rem] font-bold">Contact Us</h1>
+        <form
+          novalidate
+          id="form"
+          class="mt-5 grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-7"
+        >
+          <label class="flex flex-col gap-2">
+            <span
+              class="after:text-primary-green-600 after:ml-2 after:content-['*']"
+              >First Name</span
+            >
+            <input
+              id="first-name"
+              name="first-name"
+              class="border-neutral-grey-500 focus:outline-primary-green-600 rounded-lg border-[1px] p-3 focus:outline-1"
+              type="text"
+              required
+            />
+          </label>
+          <label class="flex flex-col gap-2">
+            <span
+              class="after:text-primary-green-600 after:ml-2 after:content-['*']"
+              >Last Name</span
+            >
+            <input
+              id="last-name"
+              name="last-name"
+              class="border-neutral-grey-500 focus:outline-primary-green-600 rounded-lg border-[1px] p-3 focus:outline-1"
+              type="text"
+              required
+            />
+          </label>
+          <label class="flex flex-col gap-2 md:col-span-2">
+            <span
+              class="after:text-primary-green-600 after:ml-2 after:content-['*']"
+              >Email Address</span
+            >
+            <input
+              id="email"
+              name="email"
+              class="border-neutral-grey-500 focus:outline-primary-green-600 rounded-lg border-[1px] p-3 focus:outline-1"
+              type="text"
+              required
+            />
+          </label>
+          <fieldset
+            id="query-type-group"
+            class="flex flex-col gap-2 md:col-span-2"
+          >
+            <p
+              aria-label="Query Type"
+              class="after:text-primary-green-600 after:ml-2 after:content-['*']"
+            >
+              Query Type
+            </p>
+            <div
+              class="flex flex-col gap-3 *:flex *:cursor-pointer *:items-center md:flex-row"
+            >
+              <label
+                class="border-neutral-grey-500 rounded-lg border-[1px] px-6 py-2 md:grow"
+              >
+                <input
+                  class="peer size-[20px] checked:hidden"
+                  type="radio"
+                  name="query-type"
+                  value="General Enquiry"
+                />
+                <img
+                  class="hidden size-[20px] peer-checked:inline-block"
+                  src="./assets/images/icon-radio-selected.svg"
+                  alt="select icon"
+                />
+                <span class="ml-2">General Enquiry</span>
+              </label>
+              <label
+                class="border-neutral-grey-500 rounded-lg border-[1px] px-6 py-3 md:grow"
+              >
+                <input
+                  class="peer size-[20px] checked:hidden"
+                  aria-hidden="true"
+                  type="radio"
+                  name="query-type"
+                  value="Support Request"
+                />
+                <img
+                  class="hidden size-[20px] peer-checked:inline-block"
+                  src="./assets/images/icon-radio-selected.svg"
+                  alt="select icon"
+                />
+                <span class="ml-2">Support Request</span>
+              </label>
+            </div>
+          </fieldset>
+          <label class="flex flex-col gap-2 md:col-span-2">
+            <span
+              class="after:text-primary-green-600 after:ml-2 after:content-['*']"
+              >Message</span
+            >
+            <textarea
+              id="message"
+              name="message"
+              class="border-neutral-grey-500 focus:outline-primary-green-600 h-56 resize-none rounded-lg border-[1px] p-2 focus:outline-1 md:h-32"
+              required
+            ></textarea>
+          </label>
+          <div class="md:col-span-2">
+            <label class="flex cursor-pointer items-center gap-3 md:gap-5">
+              <input
+                class="peer size-[20px] checked:hidden"
+                id="consent"
+                type="checkbox"
+                name="consent"
+                required
+              />
+              <img
+                class="hidden size-[20px] peer-checked:inline-block"
+                src="./assets/images/icon-checkbox-check.svg"
+                alt="check icon"
+              />
+              <span
+                class="after:text-primary-green-600 after:ml-2 after:content-['*']"
+              >
+                I consent to being contacted by the team
+              </span>
+            </label>
+            <span data-component="consent-error"></span>
+          </div>
+          <input
+            class="bg-primary-green-600 cursor-pointer rounded-lg py-4 font-bold text-white transition-colors duration-300 hover:bg-emerald-950 md:col-span-2"
+            type="submit"
+            value="Submit"
+          />
+        </form>
+      </div>
+    </main>
 
-  Contact Us
+    <script>
+      class Toast {
+        constructor(toastElement) {
+          this.toast = toastElement;
+        }
 
-  First Name
-  This field is required
+        show() {
+          this.toast.setAttribute("aria-hidden", "false");
+          setTimeout(() => {
+            this.toast.setAttribute("aria-hidden", "true");
+          }, 3000);
+        }
+      }
+      const toastElement = document.querySelector("[data-component='toast']");
+      const toast = new Toast(toastElement);
 
-  Last Name
-  This field is required
-
-  Email Address
-  Please enter a valid email address
-  This field is required
-
-  Query Type
-  General Enquiry
-  Support Request
-  Please select a query type
-
-  Message
-  This field is required
-
-  I consent to being contacted by the team
-  To submit this form, please consent to being contacted
-
-  Submit
-
-  Message Sent!
-  Thanks for completing the form. We'll be in touch soon!
-  
-</body>
+      const validate = new window.JustValidate("#form", {
+        errorLabelStyle: {},
+        errorFieldCssClass: ["border-primary-red"],
+        errorLabelCssClass: ["text-primary-red"],
+        validateBeforeSubmitting: true,
+      });
+      validate
+        .addField("#first-name", [
+          {
+            rule: "required",
+            errorMessage: "This field is required",
+          },
+        ])
+        .addField("#last-name", [
+          {
+            rule: "required",
+            errorMessage: "This field is required",
+          },
+        ])
+        .addField("#email", [
+          {
+            rule: "required",
+            errorMessage: "This field is required",
+          },
+          {
+            rule: "email",
+            errorMessage: "Please enter a valid email address",
+          },
+        ])
+        .addRequiredGroup("#query-type-group", "Please select a query type")
+        .addField("#message", [
+          {
+            rule: "required",
+            errorMessage: "This field is required",
+          },
+        ])
+        .addField(
+          "#consent",
+          [
+            {
+              rule: "required",
+              errorMessage:
+                "To submit this form you must consent to be contacted",
+            },
+          ],
+          {
+            errorsContainer: '[data-component="consent-error"]',
+          },
+        )
+        .onSuccess((event) => {
+          toast.show();
+          event.target.reset();
+        });
+    </script>
+  </body>
 </html>
