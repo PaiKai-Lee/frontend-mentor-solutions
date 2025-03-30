@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./output.css" />
+
+    <title>Frontend Mentor | News homepage</title>
+  </head>
+
+  <body class="font-inter bg-neutral-off-white text-base md:py-8">
+    <header>
+      <div
+        class="container mx-auto flex items-center justify-between overflow-hidden p-6"
+      >
+        <a href="#">
+          <img src="./assets/images/logo.svg" alt="Brand Logo" />
+        </a>
+        <div class="flex items-center">
+          <nav aria-label="Desktop navigation">
+            <ul
+              class="*:hover:text-primary-soft-red *:hover:underline hidden gap-10 text-xl md:flex"
+            >
+              <li><a href="#">Home</a></li>
+              <li><a href="#">New</a></li>
+              <li><a href="#">Popular</a></li>
+              <li><a href="#">Trending</a></li>
+              <li><a href="#">Categories</a></li>
+            </ul>
+          </nav>
+          <button aria-label="Open menu" class="cursor-pointer md:hidden">
+            <img src="./assets/images/icon-menu.svg" alt="menu icon" />
+          </button>
+        </div>
+        <div
+          role="dialog"
+          aria-hidden="true"
+          aria-label="Mobile navigation menu"
+          class="fixed right-0 top-0 h-screen w-full bg-[rgba(0,0,0,0.4)] aria-hidden:hidden md:hidden"
+        >
+          <nav
+            class="bg-neutral-off-white border-1 absolute right-0 top-0 z-10 flex h-screen w-[250px]
+              flex-col items-start gap-10 border-gray-200 p-6 md:hidden"
+          >
+            <button aria-label="Close menu" class="cursor-pointer self-end">
+              <img src="./assets/images/icon-menu-close.svg" alt="close icon" />
+            </button>
+            <ul
+              class="*:hover:text-primary-soft-red mt-4 flex flex-col gap-5 text-xl *:hover:underline"
+            >
+              <li><a href="#">Home</a></li>
+              <li><a href="#">New</a></li>
+              <li><a href="#">Popular</a></li>
+              <li><a href="#">Trending</a></li>
+              <li><a href="#">Categories</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="container mx-auto grid grid-cols-1 gap-6 p-6 md:grid-cols-3">
+        <section class="md:col-span-2">
+          <picture>
+            <source
+              media="(min-width: 768px)"
+              srcset="./assets/images/image-web-3-desktop.jpg"
+            />
+            <img src="./assets/images/image-web-3-mobile.jpg" alt="Hero image" />
+          </picture>
+        </section>
+        <section class="mb-10 flex flex-col gap-6 md:col-span-2 md:row-start-2 md:flex-row">
+          <h1 class="text-5xl font-extrabold md:text-6xl md:basis-1/2">
+            The Bright Future of Web 3.0?
+          </h1>
+          <div class="space-y-6 md:basis-1/2">
+            <p class="text-neutral-dark-grayish-blue text-lg">
+              We dive into the next evolution of the web that claims to put the power
+              of the platforms back into the hands of the people. But is it really
+              fulfilling its promise?
+            </p>
+            <button
+              class="bg-primary-soft-red text-neutral-very-dark-blue hover:bg-neutral-very-dark-blue
+                cursor-pointer px-10 py-4 text-lg font-bold uppercase tracking-widest
+                transition-colors duration-100 duration-200 hover:text-white"
+            >
+              Read more
+            </button>
+          </div>
+        </section>
+        <section data-section="new" class="mb-10 md:mb-0 md:row-span-2">
+          <article
+            class="bg-neutral-very-dark-blue flex flex-col gap-6 p-6 text-white"
+          >
+            <h2 class="text-primary-soft-orange text-2xl font-bold md:text-4xl">
+              New
+            </h2>
+            <div class="h-full flex flex-col *:grow gap-6 justify-between">              
+              <div
+                class="not-last:border-b-[1px] border-neutral-grayish-blue space-y-2 pb-6"
+              >
+                <a href="#" class="inline-block">
+                  <h3
+                    class="hover:text-primary-soft-orange text-xl font-bold md:text-2xl"
+                  >
+                    Hydrogen VS Electric Cars
+                  </h3>
+                </a>
+                <p class="text-neutral-grayish-blue">
+                  Will hydrogen-fueled cars ever catch up to EVs?
+                </p>
+              </div>
+              <div
+                class="not-last:border-b-[1px] border-neutral-grayish-blue space-y-2 pb-6"
+              >
+                <a href="#" class="inline-block">
+                  <h3
+                    class="hover:text-primary-soft-orange text-xl font-bold md:text-2xl"
+                  >
+                    The Downsides of AI Artistry
+                  </h3>
+                </a>
+                <p class="text-neutral-grayish-blue">
+                  What are the possible adverse effects of on-demand AI image
+                  generation?
+                </p>
+              </div>
+              <div
+                class="not-last:border-b-[1px] border-neutral-grayish-blue not-last:pb-6 space-y-2"
+              >
+                <a href="#" class="inline-block">
+                  <h3
+                    class="hover:text-primary-soft-orange text-xl font-bold md:text-2xl"
+                  >
+                    Is VC Funding Drying Up?
+                  </h3>
+                </a>
+                <p class="text-neutral-grayish-blue">
+                  Private funding by VC firms is down 50% YOY. We take a look at what
+                  that means.
+                </p>
+              </div>
+            </div>
+          </article>
+        </section>
+        <section data-section="trending" class="flex flex-col gap-6 md:col-span-full md:flex-row">
+          <div class="flex gap-6">
+            <img
+              class="w-full basis-1/3"
+              src="./assets/images/image-retro-pcs.jpg"
+              alt="retro image"
+            />
+            <div class="flex basis-2/3 flex-col justify-between">
+              <p class="text-primary-soft-red text-4xl font-bold">01</p>
+              <a href="">
+                <h3
+                  class="hover:text-primary-soft-red text-xl font-bold md:text-2xl"
+                >
+                  Reviving Retro PCs
+                </h3>
+              </a>
+              <p class="text-neutral-dark-grayish-blue">
+                What happens when old PCs are given modern upgrades?
+              </p>
+            </div>
+          </div>
+          <div class="flex gap-6">
+            <img
+              class="w-full basis-1/3"
+              src="./assets/images/image-top-laptops.jpg"
+              alt="laptops image"
+            />
+            <div class="flex basis-2/3 flex-col justify-between">
+              <p class="text-primary-soft-red text-4xl font-bold">02</p>
+              <a href="#">
+                <h3
+                  class="hover:text-primary-soft-red text-xl font-bold md:text-2xl"
+                >
+                  Top 10 Laptops of 2022
+                </h3>
+              </a>
+              <p class="text-neutral-dark-grayish-blue">
+                Our best picks for various needs and budgets.
+              </p>
+            </div>
+          </div>
+          <div class="flex gap-6">
+            <img
+              class="w-full basis-1/3"
+              src="./assets/images/image-gaming-growth.jpg"
+              alt="gaming image"
+            />
+            <div class="flex basis-2/3 flex-col justify-between">
+              <p class="text-primary-soft-red text-4xl font-bold">03</p>
+              <a href="#">
+                <h3
+                  class="hover:text-primary-soft-red text-xl font-bold md:text-2xl"
+                >
+                  The Growth of Gaming
+                </h3>
+              </a>
+              <p class="text-neutral-dark-grayish-blue">
+                How the pandemic has sparked fresh opportunities.
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <script>
+      // DOM elements
+      const menuOpenBtn = document.querySelector('button[aria-label="Open menu"]');
+      const menuCloseBtn = document.querySelector('button[aria-label="Close menu"]');
+      const menuModal = document.querySelector('div[role="dialog"]');
+
+      const openModal = () => {
+        menuModal.setAttribute("aria-hidden", "false");
+      };
+
+      const closeModal = () => {
+        menuModal.setAttribute("aria-hidden", "true");
+      };
+
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 768) {
+          menuModal.setAttribute("aria-hidden", "true");
+        }
+      });
+      menuOpenBtn.addEventListener("click", openModal);
+      menuCloseBtn.addEventListener("click", closeModal);
+    </script>
+  </body>
+</html>

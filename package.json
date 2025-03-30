@@ -5,16 +5,18 @@
   "main": "index.js",
   "scripts": {
     "format": "prettier . --write",
-    "dev:11": "npx @tailwindcss\/cli -i ./11-tip-calculator-app-main/input.css -o ./11-tip-calculator-app-main/output.css --watch",
-    "dev:12": "npx @tailwindcss\/cli -i ./12-interactive-rating-component-main/input.css -o ./12-interactive-rating-component-main/output.css --watch",
-    "dev:13": "npx @tailwindcss\/cli -i ./13-faq-accordion-main/input.css -o ./13-faq-accordion-main/output.css --watch",
-    "dev:14": "npx @tailwindcss\/cli -i ./14-contact-form-main/input.css -o ./14-contact-form-main/output.css --watch"
+    "dev:11": "npx @tailwindcss/cli -i ./11-tip-calculator-app-main/input.css -o ./11-tip-calculator-app-main/output.css --watch",
+    "dev:12": "npx @tailwindcss/cli -i ./12-interactive-rating-component-main/input.css -o ./12-interactive-rating-component-main/output.css --watch",
+    "dev:13": "npx @tailwindcss/cli -i ./13-faq-accordion-main/input.css -o ./13-faq-accordion-main/output.css --watch",
+    "dev:14": "npx @tailwindcss/cli -i ./14-contact-form-main/input.css -o ./14-contact-form-main/output.css --watch",
+    "dev:15": "npx @tailwindcss/cli -i ./15-news-homepage-main/input.css -o ./15-news-homepage-main/output.css --watch"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@tailwindcss/cli": "^4.0.6",
+    "prettier-plugin-classnames": "^0.7.7",
     "tailwindcss": "^4.0.6"
   },
   "devDependencies": {

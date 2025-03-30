@@ -17,7 +17,8 @@
   <body class="font-manrope bg-[var(--light-grayish-blue)]">
     <main class="flex h-screen items-center justify-center">
       <div
-        class="container relative flex max-w-[90%] flex-col overflow-hidden rounded-xl bg-white shadow-xl md:max-w-[780px] md:flex-row md:overflow-visible"
+        class="container relative flex max-w-[90%] flex-col overflow-hidden rounded-xl bg-white
+          shadow-xl md:max-w-[780px] md:flex-row md:overflow-visible"
       >
         <img
           class="h-[200px] object-cover md:h-auto md:w-[320px] md:object-left"
@@ -35,9 +36,9 @@
           <p
             class="tracking-wide text-[var(--desaturated-dark-blue)] md:text-sm md:tracking-normal"
           >
-            Ever been in a room and felt like something was missing? Perhaps it
-            felt slightly bare and uninviting. I’ve got some simple tips to help
-            you make any room feel complete.
+            Ever been in a room and felt like something was missing? Perhaps it felt
+            slightly bare and uninviting. I’ve got some simple tips to help you make
+            any room feel complete.
           </p>
           <!-- card footer -->
           <div class="flex items-center gap-5 pt-5">
@@ -56,10 +57,13 @@
               <!-- popover -->
               <div
                 data-popover="desktop-content"
-                class="pointer-events-none absolute left-1/2 hidden w-max -translate-x-1/2 items-center gap-4 rounded-xl bg-[var(--very-dark-grayish-blue)] px-10 py-5 text-white opacity-0 transition-all duration-100 md:flex"
+                class="pointer-events-none absolute left-1/2 hidden w-max -translate-x-1/2 items-center
+                  gap-4 rounded-xl bg-[var(--very-dark-grayish-blue)] px-10 py-5 text-white opacity-0
+                  transition-all duration-100 md:flex"
               >
                 <span
-                  class="absolute -bottom-2 left-1/2 h-5 w-5 -translate-x-1/2 rotate-45 bg-[var(--very-dark-grayish-blue)]"
+                  class="absolute -bottom-2 left-1/2 h-5 w-5 -translate-x-1/2 rotate-45
+                    bg-[var(--very-dark-grayish-blue)]"
                 ></span>
                 <p
                   class="text-sm uppercase tracking-[0.2rem] text-[var(--grayish-blue)]"
@@ -107,11 +111,11 @@
         </div>
         <div
           data-popover="mobile-content"
-          class="absolute bottom-0 left-0 z-40 flex w-full translate-y-full items-center gap-5 bg-[var(--very-dark-grayish-blue)] px-8 py-6 text-white transition-transform duration-100 md:hidden"
+          class="absolute bottom-0 left-0 z-40 flex w-full translate-y-full items-center gap-5
+            bg-[var(--very-dark-grayish-blue)] px-8 py-6 text-white transition-transform
+            duration-100 md:hidden"
         >
-          <p class="uppercase tracking-[0.4rem] text-[var(--grayish-blue)]">
-            Share
-          </p>
+          <p class="uppercase tracking-[0.4rem] text-[var(--grayish-blue)]">Share</p>
           <a href="https://www.facebook.com" target="_blank">
             <img
               class="h-6 w-6 cursor-pointer"
@@ -135,7 +139,8 @@
           </a>
           <button
             data-popover="mobile-close"
-            class="ml-auto h-10 w-10 cursor-pointer rounded-full bg-[var(--desaturated-dark-blue)] p-2.5 text-white"
+            class="ml-auto h-10 w-10 cursor-pointer rounded-full bg-[var(--desaturated-dark-blue)] p-2.5
+              text-white"
           >
             <svg
               class="fill-current"
@@ -173,15 +178,9 @@
         }
         if (popoverDesktopContent.classList.contains("opacity-0")) {
           popoverDesktopContent.classList.add("-translate-y-[150%]");
-          popoverDesktopContent.classList.remove(
-            "opacity-0",
-            "pointer-events-none",
-          );
+          popoverDesktopContent.classList.remove("opacity-0", "pointer-events-none");
         } else {
-          popoverDesktopContent.classList.add(
-            "opacity-0",
-            "pointer-events-none",
-          );
+          popoverDesktopContent.classList.add("opacity-0", "pointer-events-none");
           popoverDesktopContent.classList.remove("-translate-y-[150%]");
         }
       });

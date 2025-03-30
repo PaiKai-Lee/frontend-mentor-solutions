@@ -20,13 +20,12 @@
     <div
       data-component="toast"
       aria-hidden="true"
-      class="not-aria-hidden:translate-y-10 -translate-y-50 fixed left-1/2 w-[85%] -translate-x-1/2 overflow-hidden rounded-lg bg-emerald-950 p-5 text-white transition-all duration-100 md:w-fit"
+      class="not-aria-hidden:translate-y-10 -translate-y-50 fixed left-1/2 w-[85%]
+        -translate-x-1/2 overflow-hidden rounded-lg bg-emerald-950 p-5 text-white
+        transition-all duration-100 md:w-fit"
     >
       <div class="flex items-center gap-3">
-        <img
-          src="./assets/images/icon-success-check.svg"
-          alt="success send icon"
-        />
+        <img src="./assets/images/icon-success-check.svg" alt="success send icon" />
         <p class="text-xl font-bold">Message Sent!</p>
       </div>
       <p class="mt-2 font-light">
@@ -44,48 +43,45 @@
           class="mt-5 grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-7"
         >
           <label class="flex flex-col gap-2">
-            <span
-              class="after:text-primary-green-600 after:ml-2 after:content-['*']"
+            <span class="after:text-primary-green-600 after:ml-2 after:content-['*']"
               >First Name</span
             >
             <input
               id="first-name"
               name="first-name"
-              class="border-neutral-grey-500 focus:outline-primary-green-600 rounded-lg border-[1px] p-3 focus:outline-1"
+              class="border-neutral-grey-500 focus:outline-primary-green-600 rounded-lg border-[1px] p-3
+                focus:outline-1"
               type="text"
               required
             />
           </label>
           <label class="flex flex-col gap-2">
-            <span
-              class="after:text-primary-green-600 after:ml-2 after:content-['*']"
+            <span class="after:text-primary-green-600 after:ml-2 after:content-['*']"
               >Last Name</span
             >
             <input
               id="last-name"
               name="last-name"
-              class="border-neutral-grey-500 focus:outline-primary-green-600 rounded-lg border-[1px] p-3 focus:outline-1"
+              class="border-neutral-grey-500 focus:outline-primary-green-600 rounded-lg border-[1px] p-3
+                focus:outline-1"
               type="text"
               required
             />
           </label>
           <label class="flex flex-col gap-2 md:col-span-2">
-            <span
-              class="after:text-primary-green-600 after:ml-2 after:content-['*']"
+            <span class="after:text-primary-green-600 after:ml-2 after:content-['*']"
               >Email Address</span
             >
             <input
               id="email"
               name="email"
-              class="border-neutral-grey-500 focus:outline-primary-green-600 rounded-lg border-[1px] p-3 focus:outline-1"
+              class="border-neutral-grey-500 focus:outline-primary-green-600 rounded-lg border-[1px] p-3
+                focus:outline-1"
               type="text"
               required
             />
           </label>
-          <fieldset
-            id="query-type-group"
-            class="flex flex-col gap-2 md:col-span-2"
-          >
+          <fieldset id="query-type-group" class="flex flex-col gap-2 md:col-span-2">
             <p
               aria-label="Query Type"
               class="after:text-primary-green-600 after:ml-2 after:content-['*']"
@@ -131,14 +127,14 @@
             </div>
           </fieldset>
           <label class="flex flex-col gap-2 md:col-span-2">
-            <span
-              class="after:text-primary-green-600 after:ml-2 after:content-['*']"
+            <span class="after:text-primary-green-600 after:ml-2 after:content-['*']"
               >Message</span
             >
             <textarea
               id="message"
               name="message"
-              class="border-neutral-grey-500 focus:outline-primary-green-600 h-56 resize-none rounded-lg border-[1px] p-2 focus:outline-1 md:h-32"
+              class="border-neutral-grey-500 focus:outline-primary-green-600 h-56 resize-none rounded-lg
+                border-[1px] p-2 focus:outline-1 md:h-32"
               required
             ></textarea>
           </label>
@@ -165,7 +161,8 @@
             <span data-component="consent-error"></span>
           </div>
           <input
-            class="bg-primary-green-600 cursor-pointer rounded-lg py-4 font-bold text-white transition-colors duration-300 hover:bg-emerald-950 md:col-span-2"
+            class="bg-primary-green-600 cursor-pointer rounded-lg py-4 font-bold text-white
+              transition-colors duration-300 hover:bg-emerald-950 md:col-span-2"
             type="submit"
             value="Submit"
           />
@@ -230,8 +227,7 @@
           [
             {
               rule: "required",
-              errorMessage:
-                "To submit this form you must consent to be contacted",
+              errorMessage: "To submit this form you must consent to be contacted",
             },
           ],
           {

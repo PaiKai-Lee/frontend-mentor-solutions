@@ -42,7 +42,8 @@
                 />
                 <input
                   data-component="bill-input"
-                  class="text-very-dark-cyan focus:outline-strong-cyan w-full rounded-lg border-none bg-inherit p-2 text-right font-bold outline-0 focus:outline-2"
+                  class="text-very-dark-cyan focus:outline-strong-cyan w-full rounded-lg border-none
+                    bg-inherit p-2 text-right font-bold outline-0 focus:outline-2"
                   type="text"
                 />
               </div>
@@ -53,41 +54,28 @@
               Select Tip %
             </p>
             <div
-              class="*:aria-selected:bg-strong-cyan *:aria-selected:text-very-dark-cyan grid grid-cols-2 gap-4 *:cursor-pointer *:rounded-lg *:px-4 *:py-2 *:font-bold md:grid-cols-3"
+              class="*:aria-selected:bg-strong-cyan *:aria-selected:text-very-dark-cyan grid grid-cols-2
+                gap-4 *:cursor-pointer *:rounded-lg *:px-4 *:py-2 *:font-bold md:grid-cols-3"
             >
-              <button
-                data-component="tip-btn"
-                class="bg-very-dark-cyan text-white"
-              >
+              <button data-component="tip-btn" class="bg-very-dark-cyan text-white">
                 5%
               </button>
-              <button
-                data-component="tip-btn"
-                class="bg-very-dark-cyan text-white"
-              >
+              <button data-component="tip-btn" class="bg-very-dark-cyan text-white">
                 10%
               </button>
-              <button
-                data-component="tip-btn"
-                class="bg-very-dark-cyan text-white"
-              >
+              <button data-component="tip-btn" class="bg-very-dark-cyan text-white">
                 15%
               </button>
-              <button
-                data-component="tip-btn"
-                class="bg-very-dark-cyan text-white"
-              >
+              <button data-component="tip-btn" class="bg-very-dark-cyan text-white">
                 25%
               </button>
-              <button
-                data-component="tip-btn"
-                class="bg-very-dark-cyan text-white"
-              >
+              <button data-component="tip-btn" class="bg-very-dark-cyan text-white">
                 50%
               </button>
               <input
                 data-component="tip-input"
-                class="bg-very-light-grayish-cyan text-very-dark-cyan focus:outline-strong-cyan text-right focus:outline-2"
+                class="bg-very-light-grayish-cyan text-very-dark-cyan focus:outline-strong-cyan text-right
+                  focus:outline-2"
                 type="text"
                 placeholder="Custom"
               />
@@ -109,7 +97,8 @@
                 />
                 <input
                   data-component="people-input"
-                  class="text-very-dark-cyan focus:outline-strong-cyan w-full rounded-lg border-none bg-inherit p-2 text-right font-bold outline-0 focus:outline-2"
+                  class="text-very-dark-cyan focus:outline-strong-cyan w-full rounded-lg border-none
+                    bg-inherit p-2 text-right font-bold outline-0 focus:outline-2"
                   type="text"
                   value="0"
                 />
@@ -118,7 +107,8 @@
           </div>
         </section>
         <section
-          class="bg-very-dark-cyan md:max-w-1/2 flex flex-col gap-4 rounded-2xl p-5 pt-10 text-white md:basis-1/2 md:gap-12 md:p-12"
+          class="bg-very-dark-cyan md:max-w-1/2 flex flex-col gap-4 rounded-2xl p-5 pt-10 text-white
+            md:basis-1/2 md:gap-12 md:p-12"
         >
           <div class="flex items-center justify-between">
             <div>
@@ -149,7 +139,8 @@
             </div>
           </div>
           <button
-            class="bg-strong-cyan text-very-dark-cyan hover:bg-light-grayish-cyan cursor-pointer rounded-lg py-2 text-xl font-bold uppercase md:mt-auto"
+            class="bg-strong-cyan text-very-dark-cyan hover:bg-light-grayish-cyan cursor-pointer
+              rounded-lg py-2 text-xl font-bold uppercase md:mt-auto"
             data-component="reset-btn"
           >
             Reset
@@ -161,15 +152,11 @@
       const billInput = document.querySelector('[data-component="bill-input"]');
       const tipBtns = document.querySelectorAll('[data-component="tip-btn"]');
       const tipInput = document.querySelector('[data-component="tip-input"]');
-      const peopleInput = document.querySelector(
-        '[data-component="people-input"]',
-      );
+      const peopleInput = document.querySelector('[data-component="people-input"]');
       const tipAmount = document.querySelector('[data-component="tip-amount"]');
       const total = document.querySelector('[data-component="total"]');
       const billError = document.querySelector('[data-component="bill-error"]');
-      const peopleError = document.querySelector(
-        '[data-component="people-error"]',
-      );
+      const peopleError = document.querySelector('[data-component="people-error"]');
       const resetBtn = document.querySelector('[data-component="reset-btn"]');
 
       const observerValues = new Proxy(

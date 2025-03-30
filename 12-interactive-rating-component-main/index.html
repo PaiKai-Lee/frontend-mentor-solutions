@@ -16,11 +16,13 @@
   </head>
 
   <body
-    class="font-overpass bg-very-dark-blue flex min-h-screen items-center justify-center text-[15px] text-white"
+    class="font-overpass bg-very-dark-blue flex min-h-screen items-center justify-center
+      text-[15px] text-white"
   >
     <main>
       <section
-        class="bg-dark-blue container mx-auto flex max-w-[90%] flex-col gap-6 rounded-2xl p-6 md:w-[375px] md:max-w-full"
+        class="bg-dark-blue container mx-auto flex max-w-[90%] flex-col gap-6 rounded-2xl p-6
+          md:w-[375px] md:max-w-full"
       >
         <div
           class="flex size-10 items-center justify-center rounded-full bg-gray-700"
@@ -29,14 +31,16 @@
         </div>
         <h1 class="text-2xl text-white">How did we do?</h1>
         <p class="text-light-gray text-sm">
-          Please let us know how we did with your support request. All feedback
-          is appreciated to help us improve our offering!
+          Please let us know how we did with your support request. All feedback is
+          appreciated to help us improve our offering!
         </p>
         <div
-          class="text-light-gray flex justify-between gap-4 *:size-10 *:cursor-pointer *:rounded-full *:p-3 *:transition-colors *:duration-100"
+          class="text-light-gray flex justify-between gap-4 *:size-10 *:cursor-pointer *:rounded-full
+            *:p-3 *:transition-colors *:duration-100"
         >
           <input
-            class="hover:bg-primary-orange hover:text-very-dark-blue aria-pressed:text-very-dark-blue bg-gray-700 aria-pressed:bg-white"
+            class="hover:bg-primary-orange hover:text-very-dark-blue aria-pressed:text-very-dark-blue
+              bg-gray-700 aria-pressed:bg-white"
             data-component="rating-btn"
             aria-label="Rating 1"
             aria-pressed="false"
@@ -44,7 +48,8 @@
             type="button"
           />
           <input
-            class="hover:bg-primary-orange hover:text-very-dark-blue aria-pressed:text-very-dark-blue bg-gray-700 aria-pressed:bg-white"
+            class="hover:bg-primary-orange hover:text-very-dark-blue aria-pressed:text-very-dark-blue
+              bg-gray-700 aria-pressed:bg-white"
             data-component="rating-btn"
             aria-label="Rating 2"
             aria-pressed="false"
@@ -52,7 +57,8 @@
             type="button"
           />
           <input
-            class="hover:bg-primary-orange hover:text-very-dark-blue aria-pressed:text-very-dark-blue bg-gray-700 aria-pressed:bg-white"
+            class="hover:bg-primary-orange hover:text-very-dark-blue aria-pressed:text-very-dark-blue
+              bg-gray-700 aria-pressed:bg-white"
             data-component="rating-btn"
             aria-label="Rating 3"
             aria-pressed="false"
@@ -60,7 +66,8 @@
             type="button"
           />
           <input
-            class="hover:bg-primary-orange hover:text-very-dark-blue aria-pressed:text-very-dark-blue bg-gray-700 aria-pressed:bg-white"
+            class="hover:bg-primary-orange hover:text-very-dark-blue aria-pressed:text-very-dark-blue
+              bg-gray-700 aria-pressed:bg-white"
             data-component="rating-btn"
             aria-label="Rating 4"
             aria-pressed="false"
@@ -68,7 +75,8 @@
             type="button"
           />
           <input
-            class="hover:bg-primary-orange hover:text-very-dark-blue aria-pressed:text-very-dark-blue bg-gray-700 aria-pressed:bg-white"
+            class="hover:bg-primary-orange hover:text-very-dark-blue aria-pressed:text-very-dark-blue
+              bg-gray-700 aria-pressed:bg-white"
             data-component="rating-btn"
             aria-label="Rating 5"
             aria-pressed="false"
@@ -78,7 +86,9 @@
         </div>
         <button
           data-component="submit"
-          class="bg-primary-orange hover:text-soft-orange text-very-dark-blue w-full cursor-pointer rounded-full py-3 font-bold uppercase tracking-widest transition-colors duration-100 hover:bg-white"
+          class="bg-primary-orange hover:text-soft-orange text-very-dark-blue w-full cursor-pointer
+            rounded-full py-3 font-bold uppercase tracking-widest transition-colors duration-100
+            hover:bg-white"
         >
           Submit
         </button>
@@ -87,11 +97,13 @@
 
     <!-- Thank you state start -->
     <dialog
-      class="fixed left-1/2 top-1/2 w-full max-w-none -translate-x-1/2 -translate-y-1/2 bg-transparent"
+      class="fixed left-1/2 top-1/2 w-full max-w-none -translate-x-1/2 -translate-y-1/2
+        bg-transparent"
       aria-labelledby="dialog-title"
     >
       <div
-        class="bg-dark-blue container relative mx-auto flex max-w-[90%] flex-col items-center gap-6 rounded-2xl p-6 md:w-[375px]"
+        class="bg-dark-blue container relative mx-auto flex max-w-[90%] flex-col items-center gap-6
+          rounded-2xl p-6 md:w-[375px]"
       >
         <img src="./images/illustration-thank-you.svg" alt="icon thank you" />
         <p class="text-primary-orange rounded-full bg-gray-700 px-4 py-1">
@@ -101,13 +113,14 @@
         </p>
         <h2 class="text-2xl text-white">Thank you!</h2>
         <p class="text-light-gray text-center">
-          We appreciate you taking the time to give a rating. If you ever need
-          more support, don’t hesitate to get in touch!
+          We appreciate you taking the time to give a rating. If you ever need more
+          support, don’t hesitate to get in touch!
         </p>
         <button
           autofocus
           data-component="dialog-close"
-          class="bg-primary-orange absolute right-4 top-4 size-9 cursor-pointer rounded-full leading-10 transition-colors duration-100 hover:bg-white"
+          class="bg-primary-orange absolute right-4 top-4 size-9 cursor-pointer rounded-full
+            leading-10 transition-colors duration-100 hover:bg-white"
         >
           X
         </button>
@@ -126,9 +139,7 @@
       const selectedRatingEl = document.querySelector(
         '[data-component="selected-rating"]',
       );
-      const ratingBtns = document.querySelectorAll(
-        '[data-component="rating-btn"]',
-      );
+      const ratingBtns = document.querySelectorAll('[data-component="rating-btn"]');
 
       function onRatingClick(e) {
         const btnEl = e.target;
