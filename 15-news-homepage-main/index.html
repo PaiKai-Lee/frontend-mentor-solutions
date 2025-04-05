@@ -77,7 +77,9 @@
             <img src="./assets/images/image-web-3-mobile.jpg" alt="Hero image" />
           </picture>
         </section>
-        <section class="mb-10 flex flex-col gap-6 md:col-span-2 md:row-start-2 md:flex-row">
+        <section
+          class="mb-10 flex flex-col gap-6 md:col-span-2 md:row-start-2 md:flex-row"
+        >
           <h1 class="text-5xl font-extrabold md:text-6xl md:basis-1/2">
             The Bright Future of Web 3.0?
           </h1>
@@ -90,7 +92,7 @@
             <button
               class="bg-primary-soft-red text-neutral-very-dark-blue hover:bg-neutral-very-dark-blue
                 cursor-pointer px-10 py-4 text-lg font-bold uppercase tracking-widest
-                transition-colors duration-100 duration-200 hover:text-white"
+                transition-colors duration-100 hover:text-white"
             >
               Read more
             </button>
@@ -103,10 +105,11 @@
             <h2 class="text-primary-soft-orange text-2xl font-bold md:text-4xl">
               New
             </h2>
-            <div class="h-full flex flex-col *:grow gap-6 justify-between">              
-              <div
-                class="not-last:border-b-[1px] border-neutral-grayish-blue space-y-2 pb-6"
-              >
+            <div
+              class="h-full flex flex-col *:grow *:pb-6 md:*:not-last:pb-10 *:not-last:border-b-[1px]
+                *:border-neutral-grayish-blue gap-6 md:gap-10 justify-between"
+            >
+              <div>
                 <a href="#" class="inline-block">
                   <h3
                     class="hover:text-primary-soft-orange text-xl font-bold md:text-2xl"
@@ -114,13 +117,11 @@
                     Hydrogen VS Electric Cars
                   </h3>
                 </a>
-                <p class="text-neutral-grayish-blue">
+                <p class="text-neutral-grayish-blue mt-2">
                   Will hydrogen-fueled cars ever catch up to EVs?
                 </p>
               </div>
-              <div
-                class="not-last:border-b-[1px] border-neutral-grayish-blue space-y-2 pb-6"
-              >
+              <div>
                 <a href="#" class="inline-block">
                   <h3
                     class="hover:text-primary-soft-orange text-xl font-bold md:text-2xl"
@@ -128,14 +129,12 @@
                     The Downsides of AI Artistry
                   </h3>
                 </a>
-                <p class="text-neutral-grayish-blue">
+                <p class="text-neutral-grayish-blue mt-2">
                   What are the possible adverse effects of on-demand AI image
                   generation?
                 </p>
               </div>
-              <div
-                class="not-last:border-b-[1px] border-neutral-grayish-blue not-last:pb-6 space-y-2"
-              >
+              <div>
                 <a href="#" class="inline-block">
                   <h3
                     class="hover:text-primary-soft-orange text-xl font-bold md:text-2xl"
@@ -143,7 +142,7 @@
                     Is VC Funding Drying Up?
                   </h3>
                 </a>
-                <p class="text-neutral-grayish-blue">
+                <p class="text-neutral-grayish-blue mt-2">
                   Private funding by VC firms is down 50% YOY. We take a look at what
                   that means.
                 </p>
@@ -151,7 +150,10 @@
             </div>
           </article>
         </section>
-        <section data-section="trending" class="flex flex-col gap-6 md:col-span-full md:flex-row">
+        <section
+          data-section="trending"
+          class="flex flex-col gap-6 md:col-span-full md:flex-row"
+        >
           <div class="flex gap-6">
             <img
               class="w-full basis-1/3"
